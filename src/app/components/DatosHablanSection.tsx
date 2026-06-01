@@ -4,12 +4,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const stats = [
-  { number: '+8%', label: 'PIB', desc: 'crecería Colombia al reducir a la mitad la brecha salarial de género', source: 'Banco de la República, 2026' },
-  { number: '13%', label: 'Brecha', desc: 'de brecha salarial inexplicable entre hombres y mujeres con igual formación y cargo', source: 'Banco de la República, 2026' },
-  { number: '31.4%', label: 'Sin ingreso', desc: 'de mujeres de 60 años o más no tienen ningún ingreso en Colombia', source: 'Banco de la República, 2026' },
-  { number: '+15%', label: 'Rentabilidad', desc: 'más rentabilidad con 30% de mujeres en liderazgo', source: 'McKinsey Global Institute' },
-  { number: '226%', label: 'Retornos', desc: 'superiores al S&P 500 en empresas Fortune 1000 lideradas por mujeres', source: 'Fortune 1000' },
-  { number: '25.6%', label: 'Juntas', desc: 'de mujeres en juntas directivas en Colombia', source: 'Banco de la República, 2026' },
+  { number: '+8%', label: 'PIB', desc: 'Colombia crecería un 8% adicional al reducir a la mitad la brecha salarial de género', source: 'Banco de la República' },
+  { number: '13%', label: 'Brecha salarial', desc: 'diferencia salarial inexplicable entre hombres y mujeres con igual formación y cargo', source: 'Banco de la República' },
+  { number: '31.4%', label: 'Sin ingresos', desc: 'de mujeres de 60 años o más en Colombia no tienen ingreso alguno', source: 'Banco de la República' },
+  { number: '+15%', label: 'Rentabilidad', desc: 'mayor rentabilidad en empresas con al menos 30% de mujeres en liderazgo', source: 'McKinsey Global Institute' },
+  { number: '226%', label: 'Retornos', desc: 'superiores al S&P 500 en empresas Fortune 1000 con CEO mujer', source: 'Fortune 1000' },
+  { number: '25.6%', label: 'Juntas directivas', desc: 'participación femenina en juntas directivas en Colombia', source: 'Banco de la República' },
 ];
 
 export default function DatosHablanSection() {
