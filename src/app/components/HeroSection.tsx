@@ -65,16 +65,16 @@ export default function HeroSection() {
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <a
-            href="#servicios"
+            href="/servicios"
             className="btn-premium px-8 py-4 bg-charcoal text-white font-medium rounded-full hover:bg-rosewood transition-colors duration-300 text-sm tracking-wide"
           >
             Conoce nuestros servicios
           </a>
           <a
-            href="#servicios"
+            href="/contacto"
             className="px-8 py-4 border border-charcoal/30 text-charcoal font-medium rounded-full hover:border-gold hover:text-gold transition-all duration-300 text-sm tracking-wide"
           >
-            Haz tu assessment
+            Contacta con nosotros
           </a>
         </motion.div>
         
@@ -91,22 +91,6 @@ export default function HeroSection() {
           <a href="https://www.instagram.com/pamelalopez.belong" target="_blank" rel="noopener noreferrer" className="hover:text-rosewood transition-colors">@pamelalopez.belong</a>
         </motion.div>
       </div>
-      
-      {/* Scroll indicator */}
-      <motion.div 
-        initial={{ opacity: 1 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
-      >
-        <motion.div 
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 border border-charcoal/20 rounded-full flex justify-center pt-2"
-        >
-          <div className="w-1 h-2 bg-gold rounded-full" />
-        </motion.div>
-      </motion.div>
     </section>
   );
 }
