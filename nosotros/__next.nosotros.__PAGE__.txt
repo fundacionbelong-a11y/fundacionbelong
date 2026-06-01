@@ -1,0 +1,10 @@
+1:"$Sreact.fragment"
+2:I[14469,["/fundacionbelong/assets/static/chunks/135tzzwd-1i6u.js","/fundacionbelong/assets/static/chunks/10j3r_5daio5k.js","/fundacionbelong/assets/static/chunks/16hzbmsh--2vn.js","/fundacionbelong/assets/static/chunks/0qvacegttb1u4.js"],"default"]
+3:I[62860,["/fundacionbelong/assets/static/chunks/135tzzwd-1i6u.js","/fundacionbelong/assets/static/chunks/10j3r_5daio5k.js","/fundacionbelong/assets/static/chunks/16hzbmsh--2vn.js","/fundacionbelong/assets/static/chunks/0qvacegttb1u4.js"],"default"]
+4:I[77089,["/fundacionbelong/assets/static/chunks/135tzzwd-1i6u.js","/fundacionbelong/assets/static/chunks/10j3r_5daio5k.js","/fundacionbelong/assets/static/chunks/16hzbmsh--2vn.js","/fundacionbelong/assets/static/chunks/0qvacegttb1u4.js"],"default"]
+5:I[11797,["/fundacionbelong/assets/static/chunks/135tzzwd-1i6u.js","/fundacionbelong/assets/static/chunks/10j3r_5daio5k.js","/fundacionbelong/assets/static/chunks/16hzbmsh--2vn.js","/fundacionbelong/assets/static/chunks/0qvacegttb1u4.js"],"default"]
+6:I[96733,["/fundacionbelong/assets/static/chunks/135tzzwd-1i6u.js","/fundacionbelong/assets/static/chunks/10j3r_5daio5k.js","/fundacionbelong/assets/static/chunks/16hzbmsh--2vn.js","/fundacionbelong/assets/static/chunks/0qvacegttb1u4.js"],"default"]
+7:I[12102,["/fundacionbelong/assets/static/chunks/135tzzwd-1i6u.js","/fundacionbelong/assets/static/chunks/10j3r_5daio5k.js"],"OutletBoundary"]
+8:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"children":["$","div",null,{"className":"pt-8","children":[["$","$L3",null,{}],["$","$L4",null,{}],["$","$L5",null,{}],["$","$L6",null,{}]]}]}],[["$","script","script-0",{"src":"/fundacionbelong/assets/static/chunks/16hzbmsh--2vn.js","async":true}],["$","script","script-1",{"src":"/fundacionbelong/assets/static/chunks/0qvacegttb1u4.js","async":true}]],["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"u0gd70cG32_8_1evBuN0n"}
+9:null

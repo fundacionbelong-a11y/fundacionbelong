@@ -1,0 +1,9 @@
+1:"$Sreact.fragment"
+2:I[14469,["/fundacionbelong/assets/static/chunks/135tzzwd-1i6u.js","/fundacionbelong/assets/static/chunks/10j3r_5daio5k.js","/fundacionbelong/assets/static/chunks/0f28a_~bsw790.js","/fundacionbelong/assets/static/chunks/0qvacegttb1u4.js"],"default"]
+3:I[75823,["/fundacionbelong/assets/static/chunks/135tzzwd-1i6u.js","/fundacionbelong/assets/static/chunks/10j3r_5daio5k.js","/fundacionbelong/assets/static/chunks/0f28a_~bsw790.js","/fundacionbelong/assets/static/chunks/0qvacegttb1u4.js"],"default"]
+4:I[62860,["/fundacionbelong/assets/static/chunks/135tzzwd-1i6u.js","/fundacionbelong/assets/static/chunks/10j3r_5daio5k.js","/fundacionbelong/assets/static/chunks/0f28a_~bsw790.js","/fundacionbelong/assets/static/chunks/0qvacegttb1u4.js"],"default"]
+5:I[1648,["/fundacionbelong/assets/static/chunks/135tzzwd-1i6u.js","/fundacionbelong/assets/static/chunks/10j3r_5daio5k.js","/fundacionbelong/assets/static/chunks/0f28a_~bsw790.js","/fundacionbelong/assets/static/chunks/0qvacegttb1u4.js"],"default"]
+6:I[12102,["/fundacionbelong/assets/static/chunks/135tzzwd-1i6u.js","/fundacionbelong/assets/static/chunks/10j3r_5daio5k.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"children":[["$","$L3",null,{}],["$","$L4",null,{}],["$","$L5",null,{}]]}],[["$","script","script-0",{"src":"/fundacionbelong/assets/static/chunks/0f28a_~bsw790.js","async":true}],["$","script","script-1",{"src":"/fundacionbelong/assets/static/chunks/0qvacegttb1u4.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"u0gd70cG32_8_1evBuN0n"}
+8:null

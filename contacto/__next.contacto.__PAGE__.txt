@@ -1,0 +1,7 @@
+1:"$Sreact.fragment"
+2:I[14469,["/fundacionbelong/assets/static/chunks/135tzzwd-1i6u.js","/fundacionbelong/assets/static/chunks/10j3r_5daio5k.js","/fundacionbelong/assets/static/chunks/00z9kk28dx8cd.js"],"default"]
+3:I[84753,["/fundacionbelong/assets/static/chunks/135tzzwd-1i6u.js","/fundacionbelong/assets/static/chunks/10j3r_5daio5k.js","/fundacionbelong/assets/static/chunks/00z9kk28dx8cd.js"],"default"]
+4:I[12102,["/fundacionbelong/assets/static/chunks/135tzzwd-1i6u.js","/fundacionbelong/assets/static/chunks/10j3r_5daio5k.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"children":["$","div",null,{"className":"pt-8","children":["$","$L3",null,{}]}]}],[["$","script","script-0",{"src":"/fundacionbelong/assets/static/chunks/00z9kk28dx8cd.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"u0gd70cG32_8_1evBuN0n"}
+6:null
