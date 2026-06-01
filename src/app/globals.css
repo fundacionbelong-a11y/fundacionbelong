@@ -1,59 +1,168 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 @theme inline {
   --color-rosewood: #c18e98;
   --color-gold: #c0941a;
   --color-light-gold: #f4de53;
   --color-dark-gold: #b07908;
-  --color-cream: #FBF5E8;
-  --color-pale-rosewood: #F9F0F3;
+  --color-cream: #FDFCF8;
+  --color-pale-rosewood: #FAF5F7;
+  --color-warm-white: #FFFBF5;
+  --color-charcoal: #1a1a1a;
+  --color-stone: #57534e;
   --color-background: #ffffff;
-  --color-foreground: #171717;
-  --font-sans: 'Open Sans', sans-serif;
-  --font-poppins: 'Poppins', sans-serif;
-  --font-script: 'Dancing Script', cursive;
-  --font-display: 'Playfair Display', serif;
+  --color-foreground: #1a1a1a;
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-ui: 'Poppins', sans-serif;
 }
 
 body {
-  background: var(--color-background);
-  color: var(--color-foreground);
-  font-family: var(--font-sans);
+  background: #ffffff;
+  color: #1a1a1a;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Premium selection color */
+::selection {
+  background: rgba(193, 142, 152, 0.25);
+  color: #1a1a1a;
+}
+
+/* Smooth scrolling */
+html {
   scroll-behavior: smooth;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Hide scrollbar for mobile nav */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+/* Hide scrollbar for mobile nav */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 
-.animate-fadeInUp {
-  animation: fadeInUp 0.8s ease-out forwards;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FDFCF8;
+}
+::-webkit-scrollbar-thumb {
+  background: #c18e98;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b07908;
 }
 
-.animate-float {
-  animation: float 3s ease-in-out infinite;
+/* Elegant underline animation */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #c0941a;
+  transition: width 0.4s ease;
+}
+.link-underline:hover::after {
+  width: 100%;
 }
 
-.gradient-gold {
-  background: linear-gradient(135deg, var(--color-light-gold), var(--color-gold), var(--color-dark-gold));
+/* Gold accent line */
+.gold-line {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, #f4de53, #c0941a, #b07908);
 }
 
+/* Soft gradient backgrounds */
+.bg-soft-cream {
+  background: linear-gradient(180deg, #FDFCF8 0%, #FFFBF5 100%);
+}
+
+.bg-soft-rose {
+  background: linear-gradient(180deg, #FAF5F7 0%, #FDFCF8 100%);
+}
+
+/* Text gradient gold */
 .text-gradient-gold {
-  background: linear-gradient(135deg, var(--color-light-gold), var(--color-gold), var(--color-dark-gold));
+  background: linear-gradient(135deg, #c0941a, #b07908);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Image overlay */
+.image-overlay {
+  position: relative;
+}
+.image-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(193, 142, 152, 0.15), rgba(192, 148, 26, 0.1));
+  mix-blend-mode: multiply;
+}
+
+/* Button premium styles */
+.btn-premium {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+.btn-premium::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.6s ease;
+}
+.btn-premium:hover::before {
+  left: 100%;
+}
+
+/* Card hover lift */
+.card-lift {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(192, 148, 26, 0.1);
+}
+
+/* Elegant divider */
+.elegant-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.elegant-divider::before,
+.elegant-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c0941a, transparent);
 }

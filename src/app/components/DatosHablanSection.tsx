@@ -1,54 +1,65 @@
 'use client';
 
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const stats = [
   { number: '+8%', label: 'PIB', desc: 'crecería Colombia al reducir a la mitad la brecha salarial de género', source: 'Banco de la República, 2026' },
-  { number: '13%', label: 'brecha salarial', desc: 'de brecha salarial inexplicable entre hombres y mujeres con igual formación y cargo', source: 'Banco de la República, 2026' },
-  { number: '31.4%', label: 'sin ingreso', desc: 'de mujeres de 60 años o más no tienen ningún ingreso en Colombia', source: 'Banco de la República, 2026' },
-  { number: '+15%', label: 'rentabilidad', desc: 'más rentabilidad con 30% de mujeres en liderazgo (22.000 empresas, 91 países)', source: 'McKinsey Global Institute' },
-  { number: '226%', label: 'retornos', desc: 'retornos superiores al S&P 500 en empresas Fortune 1000 lideradas por mujeres', source: 'Fortune 1000' },
-  { number: '25.6%', label: 'juntas', desc: 'de mujeres en juntas directivas en Colombia', source: 'Banco de la República, 2026' },
+  { number: '13%', label: 'Brecha', desc: 'de brecha salarial inexplicable entre hombres y mujeres con igual formación y cargo', source: 'Banco de la República, 2026' },
+  { number: '31.4%', label: 'Sin ingreso', desc: 'de mujeres de 60 años o más no tienen ningún ingreso en Colombia', source: 'Banco de la República, 2026' },
+  { number: '+15%', label: 'Rentabilidad', desc: 'más rentabilidad con 30% de mujeres en liderazgo', source: 'McKinsey Global Institute' },
+  { number: '226%', label: 'Retornos', desc: 'superiores al S&P 500 en empresas Fortune 1000 lideradas por mujeres', source: 'Fortune 1000' },
+  { number: '25.6%', label: 'Juntas', desc: 'de mujeres en juntas directivas en Colombia', source: 'Banco de la República, 2026' },
 ];
 
 export default function DatosHablanSection() {
   return (
-    <section id="datos" className="py-20 md:py-32 bg-[#FBF5E8]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
-            Los <span className="text-[#c0941a]">datos</span> hablan
+    <section id="datos" className="py-24 md:py-40 bg-soft-cream relative overflow-hidden">
+      {/* Decorative large number */}
+      <div className="absolute -right-20 top-1/2 -translate-y-1/2 text-[20rem] font-serif text-gold/[0.03] select-none leading-none">
+        %
+      </div>
+
+      <div className="max-w-6xl mx-auto px-6 relative">
+        <motion.div
+          initial={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
+        >
+          <p className="text-gold text-sm font-medium tracking-[0.3em] uppercase mb-4">Evidencia</p>
+          <h2 className="text-3xl md:text-5xl font-serif font-medium text-charcoal leading-tight mb-6">
+            Los <span className="text-rosewood italic">datos</span> hablan
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <div className="gold-line mx-auto" />
+          <p className="text-stone mt-6 max-w-2xl mx-auto font-light">
             La brecha de género es un freno al crecimiento de las organizaciones y la economía. Los datos de Colombia son contundentes.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {stats.map((stat, index) => (
-            <div 
-              key={index} 
-              className="bg-white rounded-2xl p-8 border border-[#c0941a]/20 hover:shadow-xl hover:shadow-[#c0941a]/10 transition-all duration-300 hover:-translate-y-1"
+            <motion.div
+              key={index}
+              initial={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.6 }}
+              className="card-lift bg-white rounded-2xl p-8 border border-gold/10 relative overflow-hidden group"
             >
-              <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#f4de53] via-[#c0941a] to-[#b07908] bg-clip-text text-transparent mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
-                {stat.number}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-gold/5 to-transparent rounded-bl-full" />
+              <div className="relative">
+                <div className="text-5xl md:text-6xl font-serif text-gradient-gold mb-3 leading-none">
+                  {stat.number}
+                </div>
+                <p className="text-sm font-medium text-rosewood uppercase tracking-wider mb-3">{stat.label}</p>
+                <p className="text-stone text-sm leading-relaxed mb-4">{stat.desc}</p>
+                <p className="text-xs text-stone/50">{stat.source}</p>
               </div>
-              <div className="text-sm font-semibold text-[#c18e98] uppercase tracking-wide mb-3">
-                {stat.label}
-              </div>
-              <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                {stat.desc}
-              </p>
-              <p className="text-xs text-gray-400 italic">
-                {stat.source}
-              </p>
-            </div>
+            </motion.div>
           ))}
         </div>
-
-        <p className="text-center text-xs text-gray-400 mt-10">
-          Fuentes: Banco de la República de Colombia, ESPE Núm. 111 (marzo 2026); McKinsey Global Institute; DANE Gran Encuesta Integrada de Hogares.
-        </p>
       </div>
     </section>
   );

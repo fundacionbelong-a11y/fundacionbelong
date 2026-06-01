@@ -1,71 +1,88 @@
 'use client';
 
 import React from 'react';
+import { motion } from 'framer-motion';
+
+const pillars = [
+  { letter: 'E', title: 'Educamos', desc: 'Creamos y compartimos conocimiento sobre género, pertenencia e inclusión.' },
+  { letter: 'T', title: 'Transformamos', desc: 'Acompañamos organizaciones con metodologías probadas para cerrar brechas culturales.' },
+  { letter: 'C', title: 'Conectamos', desc: 'Construimos comunidad donde las personas encuentran pares, inspiración y soporte.' },
+];
 
 export default function QueEsBelongSection() {
   return (
-    <section id="que-es" className="py-20 md:py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left: Text */}
-          <div className="order-2 md:order-1">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
-              ¿Qué es <span className="text-[#c18e98]">Belong</span>?
+    <section id="que-es" className="py-24 md:py-40 bg-white">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          {/* Left: Content */}
+          <motion.div
+            initial={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+          >
+            <p className="text-gold text-sm font-medium tracking-[0.3em] uppercase mb-4">¿Qué es Belong?</p>
+            <h2 className="text-3xl md:text-5xl font-serif font-medium text-charcoal leading-tight mb-8">
+              Una fundación colombiana dedicada a construir{' '}
+              <span className="text-rosewood italic">entornos inclusivos</span>
             </h2>
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+            <p className="text-stone text-lg leading-relaxed mb-10 font-light">
               Belong es una fundación colombiana fundada en Bogotá, dedicada a construir entornos donde todas las personas — mujeres, hombres, niñas y jóvenes — puedan desarrollar su potencial con equidad de oportunidades y un sentido genuino de pertenencia.
             </p>
             
             <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#f4de53] to-[#b07908] flex items-center justify-center text-white font-bold shrink-0">
-                  E
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Educamos</h3>
-                  <p className="text-gray-600">Creamos y compartimos conocimiento sobre género, pertenencia e inclusión.</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#f4de53] to-[#b07908] flex items-center justify-center text-white font-bold shrink-0">
-                  T
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Transformamos</h3>
-                  <p className="text-gray-600">Acompañamos organizaciones con metodologías probadas para cerrar brechas culturales.</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#f4de53] to-[#b07908] flex items-center justify-center text-white font-bold shrink-0">
-                  C
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Conectamos</h3>
-                  <p className="text-gray-600">Construimos comunidad donde las personas encuentran pares, inspiración y soporte.</p>
-                </div>
-              </div>
+              {pillars.map((pillar, i) => (
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.15 }}
+                  className="flex gap-5"
+                >
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-light-gold/30 to-gold/30 flex items-center justify-center text-gold font-serif text-xl shrink-0">
+                    {pillar.letter}
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-charcoal mb-1">{pillar.title}</h3>
+                    <p className="text-stone text-sm leading-relaxed">{pillar.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
             
-            <div className="mt-10 p-6 bg-[#F9F0F3] rounded-2xl border-l-4 border-[#c18e98]">
-              <p className="text-xl italic text-[#c18e98] font-medium" style={{ fontFamily: "'Dancing Script', cursive" }}>
-                "Be. BeU. Belong. Ser. Ser tú. Pertenecer."
+            <div className="mt-10 pt-8 border-t border-gold/10">
+              <p className="text-rosewood font-serif text-2xl italic">
+                "Be. BeU. Belong."
               </p>
+              <p className="text-stone/60 text-sm mt-1">Ser. Ser tú. Pertenecer.</p>
             </div>
-          </div>
+          </motion.div>
           
-          {/* Right: Image placeholder */}
-          <div className="order-1 md:order-2 flex justify-center">
-            <div className="relative w-72 h-72 md:w-96 md:h-96">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#f4de53]/20 via-[#c0941a]/20 to-[#b07908]/20 animate-float" />
-              <div className="absolute inset-4 rounded-full bg-gradient-to-br from-[#FBF5E8] to-[#F9F0F3] flex items-center justify-center">
-                <svg className="w-32 h-32 text-[#c18e98]/40" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                </svg>
+          {/* Right: Visual */}
+          <motion.div
+            initial={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="relative"
+          >
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-pale-rosewood">
+              <div className="absolute inset-0 bg-gradient-to-br from-rosewood/5 to-gold/10" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <img src="/fundacionbelong/logo-belong.png" alt="Belong" className="w-2/3 opacity-20" />
               </div>
+              {/* Floating accent */}
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gold/10 rounded-full blur-2xl" />
+              <div className="absolute -top-6 -right-6 w-24 h-24 bg-rosewood/10 rounded-full blur-2xl" />
             </div>
-          </div>
+            
+            {/* Stats mini card */}
+            <div className="absolute -bottom-8 -right-4 md:right-8 bg-white rounded-xl p-6 shadow-xl shadow-charcoal/5 border border-gold/10">
+              <p className="text-3xl font-serif text-gold">15+</p>
+              <p className="text-xs text-stone mt-1">años de experiencia<br/>en tecnología global</p>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

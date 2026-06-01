@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const episodes = [
   'Cuando el talento se va: historias de mujeres que dejaron el corporativo',
@@ -12,76 +13,107 @@ const episodes = [
 
 export default function EducacionPodcastSection() {
   return (
-    <section id="educacion" className="py-20 md:py-32 bg-[#F9F0F3]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
-            <span className="text-[#c0941a]">Aprende.</span>{' '}
-            <span className="text-[#c18e98]">Infórmate.</span>{' '}
-            <span className="text-[#b07908]">Transfórmate.</span>
+    <section id="educacion" className="py-24 md:py-40 bg-soft-cream">
+      <div className="max-w-6xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
+        >
+          <p className="text-gold text-sm font-medium tracking-[0.3em] uppercase mb-4">Conocimiento</p>
+          <h2 className="text-3xl md:text-5xl font-serif font-medium text-charcoal leading-tight mb-6">
+            <span className="text-rosewood italic">Aprende.</span>{' '}
+            <span className="text-gold">Infórmate.</span>{' '}
+            <span className="text-dark-gold">Transfórmate.</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Aquí encontrarás contenido educativo riguroso y accesible sobre género, pertenencia y liderazgo inclusivo. Compartimos investigaciones de fuentes confiables, entrevistas a expertas y recursos para que tú y tu organización puedan actuar con más información y convicción.
-          </p>
-        </div>
+          <div className="gold-line mx-auto" />
+        </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8 mb-16">
-          {/* Banco de conocimiento */}
-          <div className="bg-white rounded-2xl p-8 border border-[#c0941a]/20">
-            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#f4de53] to-[#b07908] flex items-center justify-center text-white text-xl mb-6">
+          <motion.div
+            initial={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="card-lift bg-white rounded-2xl p-10 border border-gold/10"
+          >
+            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-gold/20 to-dark-gold/20 flex items-center justify-center text-2xl mb-6">
               📚
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>Banco de conocimiento</h3>
-            <p className="text-gray-600 mb-4">Fuentes verificadas, estudios académicos e informes institucionales sobre brecha de género en Colombia y el mundo.</p>
+            <h3 className="text-2xl font-serif text-charcoal mb-4">Banco de conocimiento</h3>
+            <p className="text-stone leading-relaxed mb-6">
+              Fuentes verificadas, estudios académicos e informes institucionales sobre brecha de género en Colombia y el mundo.
+            </p>
             <div className="flex flex-wrap gap-2">
               {['Salarios', 'Liderazgo', 'Educación', 'Niñez', 'Tecnología'].map(tag => (
-                <span key={tag} className="px-3 py-1 bg-[#FBF5E8] text-[#c0941a] text-xs font-medium rounded-full">{tag}</span>
+                <span key={tag} className="px-3 py-1 bg-cream text-gold text-xs font-medium rounded-full border border-gold/10">
+                  {tag}
+                </span>
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          {/* Videos educativos */}
-          <div className="bg-white rounded-2xl p-8 border border-[#c0941a]/20">
-            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#f4de53] to-[#b07908] flex items-center justify-center text-white text-xl mb-6">
+          <motion.div
+            initial={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="card-lift bg-white rounded-2xl p-10 border border-gold/10"
+          >
+            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-rosewood/20 to-gold/20 flex items-center justify-center text-2xl mb-6">
               🎬
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>Videos educativos</h3>
-            <p className="text-gray-600">Una selección cuidadosa de contenido audiovisual — producciones propias, charlas, entrevistas y documentales — sobre género, liderazgo y pertenencia.</p>
-          </div>
+            <h3 className="text-2xl font-serif text-charcoal mb-4">Videos educativos</h3>
+            <p className="text-stone leading-relaxed">
+              Una selección cuidadosa de contenido audiovisual — producciones propias, charlas, entrevistas y documentales sobre género, liderazgo y pertenencia.
+            </p>
+          </motion.div>
         </div>
 
         {/* Podcast */}
-        <div className="bg-gradient-to-br from-[#c18e98]/10 to-[#F9F0F3] rounded-2xl p-8 md:p-12 border border-[#c18e98]/20">
-          <div className="text-center mb-8">
-            <h3 className="text-3xl md:text-4xl font-bold mb-2" style={{ fontFamily: "'Dancing Script', cursive" }}>Voces que Pertenecen</h3>
-            <p className="text-gray-600">Entrevistas en profundidad con líderes, investigadoras, activistas y personas que han navegado la brecha de género.</p>
-          </div>
+        <motion.div
+          initial={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="bg-charcoal rounded-2xl p-10 md:p-16 text-white relative overflow-hidden"
+        >
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full blur-3xl" />
+          
+          <div className="relative">
+            <p className="text-gold text-sm font-medium tracking-[0.3em] uppercase mb-4">Podcast</p>
+            <h3 className="text-3xl md:text-5xl font-serif mb-4">
+              <span className="text-rosewood italic">Voces</span> que Pertenecen
+            </h3>
+            <p className="text-white/60 max-w-xl mb-10 leading-relaxed">
+              Entrevistas en profundidad con líderes, investigadoras, activistas y personas que han navegado la brecha de género en sus propias experiencias.
+            </p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {episodes.map((episode, index) => (
-              <div key={index} className="bg-white rounded-xl p-4 hover:shadow-md transition-shadow">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#FBF5E8] flex items-center justify-center text-[#c0941a] font-bold text-sm">
-                    {index + 1}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {episodes.map((episode, index) => (
+                <div key={index} className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:border-gold/30 transition-colors">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center text-gold text-sm font-serif">
+                      {index + 1}
+                    </div>
+                    <p className="text-sm text-white/80 leading-snug">{episode}</p>
                   </div>
-                  <p className="text-sm text-gray-700">{episode}</p>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          <div className="text-center mt-8">
-            <p className="text-sm text-gray-500 mb-4">Próximamente en Spotify y Apple Podcasts</p>
-            <div className="flex justify-center gap-4">
-              <button className="px-6 py-3 bg-[#1DB954] text-white rounded-full text-sm font-medium opacity-60 cursor-not-allowed">
-                🎧 Escuchar en Spotify
-              </button>
-              <button className="px-6 py-3 bg-[#FA243C] text-white rounded-full text-sm font-medium opacity-60 cursor-not-allowed">
-                🎵 Escuchar en Apple
-              </button>
+            <div className="mt-10 flex gap-4">
+              <span className="px-4 py-2 bg-white/5 rounded-full text-xs text-white/40 border border-white/10">
+                Próximamente en Spotify
+              </span>
+              <span className="px-4 py-2 bg-white/5 rounded-full text-xs text-white/40 border border-white/10">
+                Apple Podcasts
+              </span>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

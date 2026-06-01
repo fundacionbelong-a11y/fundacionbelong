@@ -1,72 +1,108 @@
 'use client';
 
 import React from 'react';
+import { motion } from 'framer-motion';
 
 export default function SobrePamelaSection() {
   return (
-    <section id="pamela" className="py-20 md:py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left: Photo */}
-          <div className="flex justify-center">
-            <div className="relative w-72 h-72 md:w-80 md:h-80">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#f4de53]/30 via-[#c0941a]/30 to-[#b07908]/30 animate-float" />
-              <div className="absolute inset-3 rounded-full bg-[#F9F0F3] flex items-center justify-center overflow-hidden">
-                <svg className="w-32 h-32 text-[#c18e98]/50" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                </svg>
+    <section id="pamela" className="py-24 md:py-40 bg-white relative overflow-hidden">
+      {/* Decorative background shape */}
+      <div className="absolute -right-40 top-20 w-80 h-80 bg-pale-rosewood rounded-full blur-3xl opacity-40" />
+      
+      <div className="max-w-6xl mx-auto px-6 relative">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          {/* Left: Image area */}
+          <motion.div
+            initial={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="lg:col-span-5"
+          >
+            <div className="relative">
+              {/* Main image container */}
+              <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-gradient-to-br from-pale-rosewood to-cream relative">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <img src="/fundacionbelong/pamela-lopez.jpg" alt="Pamela López" className="w-full h-full object-cover" />
+                </div>
+                {/* Overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/20 via-transparent to-transparent" />
               </div>
+              
+              {/* Floating badge */}
+              <div className="absolute -bottom-4 -right-4 bg-white rounded-xl p-4 shadow-xl shadow-charcoal/10 border border-gold/10">
+                <p className="text-3xl font-serif text-gold">15+</p>
+                <p className="text-xs text-stone">años en tecnología</p>
+              </div>
+              
+              {/* Corner accent */}
+              <div className="absolute -top-3 -left-3 w-20 h-20 border-l-2 border-t-2 border-gold/30 rounded-tl-xl" />
             </div>
-          </div>
+          </motion.div>
           
-          {/* Right: Bio */}
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
-              Pamela <span className="text-[#c18e98]">López Zúñiga</span>
+          {/* Right: Content */}
+          <motion.div
+            initial={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="lg:col-span-7"
+          >
+            <p className="text-gold text-sm font-medium tracking-[0.3em] uppercase mb-4">
+              Nuestra fundadora
+            </p>
+            
+            <h2 className="text-4xl md:text-5xl font-serif font-medium text-charcoal mb-2">
+              Pamela <span className="text-rosewood italic">López Zúñiga</span>
             </h2>
-            <p className="text-sm text-gray-500 mb-6 uppercase tracking-wide">
+            
+            <p className="text-sm text-stone/70 mb-8 uppercase tracking-wider">
               Ingeniera Industrial | Fundadora Fundación Belong | Directora General MujeresTIC | Speaker | 15 años en tecnología
             </p>
             
-            <p className="text-lg text-gray-600 leading-relaxed mb-6">
-              Acompaño comunidades para que todos sientan que pertenecen. Desde Fundación Belong lidero iniciativas de transformación cultural orientadas a cerrar brechas de género y potenciar el liderazgo femenino en empresas, instituciones y comunidades. Con 15 años de experiencia en IBM y Amazon Web Services, combino rigor tecnológico con visión humana para diseñar modelos sostenibles de equidad y crecimiento.
-            </p>
+            <div className="prose prose-stone max-w-none">
+              <p className="text-lg leading-relaxed text-stone mb-6 font-light">
+                Acompaño comunidades para que todos sientan que pertenecen. Desde Fundación Belong lidero iniciativas de transformación cultural orientadas a cerrar brechas de género y potenciar el liderazgo femenino en empresas, instituciones y comunidades.
+              </p>
+              
+              <p className="text-stone leading-relaxed mb-6">
+                Con 15 años de experiencia en IBM y Amazon Web Services, combino rigor tecnológico con visión humana para diseñar modelos sostenibles de equidad y crecimiento. En AWS lideré la estrategia de la industria de pagos y la consolidación de Bre-B, así como el capítulo Women@Latam en Latinoamérica. Soy Directora General de MujeresTIC.org.
+              </p>
+            </div>
             
-            <p className="text-gray-600 leading-relaxed mb-6">
-              Ingeniera Industrial de la Universidad de los Andes. He liderado proyectos en los sectores financiero, educativo y tecnológico en Colombia y México, combinando visión estratégica con ejecución disciplinada y enfoque en resultados. En Amazon Web Services lideré la estrategia de la industria de pagos y la consolidación de Bre-B (pagos inmediatos) y finanzas abiertas, así como el capítulo Women@Latam en Latinoamérica. Soy Directora General de MujeresTIC.org, la red de mujeres líderes que busca cerrar la brecha de género con la tecnología en Colombia.
-            </p>
-            
-            <div className="p-6 bg-[#F9F0F3] rounded-2xl border-l-4 border-[#c18e98] mb-8">
-              <p className="text-lg italic text-[#c18e98] font-medium" style={{ fontFamily: "'Dancing Script', cursive" }}>
+            {/* Quote */}
+            <div className="mt-10 pl-6 border-l-2 border-gold">
+              <p className="text-xl font-serif text-charcoal italic leading-relaxed">
                 "Vengo del mundo de la tecnología que transforma industrias; hoy la pongo al servicio de mujeres que transforman comunidades, organizaciones y futuro."
               </p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4">
+            {/* Social links */}
+            <div className="mt-10 flex gap-4">
               <a
                 href="https://www.instagram.com/pamelalopez.belong"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 px-6 py-3 bg-[#F9F0F3] text-[#c18e98] rounded-full hover:bg-[#c18e98] hover:text-white transition-all"
+                className="flex items-center gap-2 px-6 py-3 bg-pale-rosewood text-rosewood rounded-full hover:bg-rosewood hover:text-white transition-all text-sm font-medium"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                 </svg>
-                @pamelalopez.belong
+                Instagram
               </a>
               <a
                 href="https://www.linkedin.com/in/pamelalopezz"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 px-6 py-3 bg-[#FBF5E8] text-[#c0941a] rounded-full hover:bg-[#c0941a] hover:text-white transition-all"
+                className="flex items-center gap-2 px-6 py-3 bg-cream text-gold rounded-full hover:bg-gold hover:text-white transition-all text-sm font-medium"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                 </svg>
-                linkedin.com/in/pamelalopezz
+                LinkedIn
               </a>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

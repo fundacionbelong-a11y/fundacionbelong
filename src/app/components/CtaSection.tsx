@@ -1,27 +1,47 @@
 'use client';
 
 import React from 'react';
+import { motion } from 'framer-motion';
 
 export default function CtaSection() {
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-r from-[#f4de53]/20 via-[#c0941a]/10 to-[#b07908]/20">
-      <div className="max-w-4xl mx-auto px-4 text-center">
-        <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8" style={{ fontFamily: "'Playfair Display', serif" }}>
-          ¿List@ para construir una cultura donde el talento se quede y lidere?
-        </h2>
-        <a
-          href="mailto:fundacionbelong@gmail.com?subject=Agenda%20una%20conversación"
-          className="inline-block px-10 py-5 bg-[#c18e98] text-white font-semibold rounded-full hover:shadow-xl hover:shadow-[#c18e98]/30 transition-all duration-300 hover:-translate-y-1 text-lg"
+    <section className="py-24 md:py-32 bg-charcoal text-white relative overflow-hidden">
+      {/* Subtle pattern */}
+      <div className="absolute inset-0 opacity-5" style={{
+        backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
+        backgroundSize: '32px 32px'
+      }} />
+      
+      <div className="max-w-4xl mx-auto px-6 text-center relative">
+        <motion.div
+          initial={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
         >
-          Agenda una conversación
-        </a>
-        <div className="mt-8 text-sm text-gray-500">
-          <span>fundacionbelong@gmail.com</span>
-          <span className="mx-3">|</span>
-          <span>+57 317 513 4506</span>
-          <span className="mx-3">|</span>
-          <span>@pamelalopez.belong</span>
-        </div>
+          <p className="text-gold text-sm font-medium tracking-[0.3em] uppercase mb-6">
+            Comienza hoy
+          </p>
+          <h2 className="text-3xl md:text-5xl font-serif font-medium leading-tight mb-8">
+            ¿List@ para construir una cultura donde{' '}
+            <span className="text-rosewood italic">el talento se quede</span> y lidere?
+          </h2>
+          
+          <a
+            href="mailto:fundacionbelong@gmail.com?subject=Agenda%20una%20conversación"
+            className="btn-premium inline-block px-10 py-5 bg-gradient-to-r from-gold to-dark-gold text-white font-medium rounded-full hover:shadow-xl hover:shadow-gold/20 transition-all duration-300"
+          >
+            Agenda una conversación
+          </a>
+          
+          <div className="mt-10 flex items-center justify-center gap-4 text-sm text-white/50">
+            <a href="mailto:fundacionbelong@gmail.com" className="hover:text-gold transition-colors">
+              fundacionbelong@gmail.com
+            </a>
+            <span className="w-1 h-1 rounded-full bg-gold" />
+            <span>+57 317 513 4506</span>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

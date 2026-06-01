@@ -1,61 +1,81 @@
 'use client';
 
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const spaces = [
-  { icon: '💬', title: 'Género y Sociedad', desc: 'Debates sobre brechas de género, políticas públicas, noticias y tendencias que nos afectan a tod@s.' },
-  { icon: '🌱', title: 'Liderazgo y Carrera', desc: 'Conversaciones sobre trayectorias profesionales, negociación, visibilidad y liderazgo con propósito.' },
-  { icon: '💻', title: 'Entornos Digitales Seguros', desc: 'Privacidad, bienestar digital y cómo construir espacios tecnológicos más seguros e inclusivos.' },
-  { icon: '👩‍👧', title: 'Maternidad y Trabajo', desc: 'Vivencias, estrategias y apoyo mutuo para navegar la doble jornada y construir trayectorias con flexibilidad.' },
-  { icon: '🎓', title: 'Niñas y Jóvenes en STEM', desc: 'Para padres, docentes y jóvenes que quieren explorar carreras en ciencia y tecnología sin límites de género.' },
-  { icon: '🤝', title: 'Aliad@s', desc: 'Para ayudarnos y compartir historias. Un espacio para construir juntos, aprender y ser parte activa del cambio.' },
+  { icon: '💬', title: 'Género y Sociedad', desc: 'Debates sobre brechas de género, políticas públicas, noticias y tendencias.' },
+  { icon: '🌱', title: 'Liderazgo y Carrera', desc: 'Conversaciones sobre trayectorias profesionales, negociación y liderazgo con propósito.' },
+  { icon: '💻', title: 'Entornos Digitales Seguros', desc: 'Privacidad, bienestar digital y espacios tecnológicos inclusivos.' },
+  { icon: '👩‍👧', title: 'Maternidad y Trabajo', desc: 'Vivencias, estrategias y apoyo mutuo para navegar la doble jornada.' },
+  { icon: '🎓', title: 'Niñas y Jóvenes en STEM', desc: 'Para padres, docentes y jóvenes que exploran ciencia y tecnología.' },
+  { icon: '🤝', title: 'Aliad@s', desc: 'Para construir juntos, aprender y ser parte activa del cambio.' },
 ];
 
 export default function ComunidadSection() {
   return (
-    <section id="comunidad" className="py-20 md:py-32 bg-[#F9F0F3]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
-            Aquí <span className="text-[#c18e98]">perteneces</span>.
+    <section id="comunidad" className="py-24 md:py-40 bg-white">
+      <div className="max-w-6xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
+        >
+          <p className="text-gold text-sm font-medium tracking-[0.3em] uppercase mb-4">Comunidad</p>
+          <h2 className="text-3xl md:text-5xl font-serif font-medium text-charcoal leading-tight mb-6">
+            Aquí <span className="text-rosewood italic">perteneces</span>.
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <div className="gold-line mx-auto" />
+          <p className="text-stone mt-6 max-w-2xl mx-auto font-light">
             Una comunidad para compartir, crecer y no estar sol@. La transformación cultural ocurre entre personas que deciden conversar, cuestionarse y construir juntas.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {spaces.map((space, index) => (
-            <div key={index} className="bg-white rounded-2xl p-8 border border-[#c18e98]/20 hover:shadow-xl hover:shadow-[#c18e98]/10 transition-all duration-300 hover:-translate-y-1">
-              <div className="text-4xl mb-4">{space.icon}</div>
-              <h3 className="text-xl font-semibold text-[#c18e98] mb-3">{space.title}</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">{space.desc}</p>
-              <button className="mt-6 px-4 py-2 border border-[#c0941a] text-[#c0941a] rounded-full text-sm font-medium hover:bg-[#c0941a] hover:text-white transition-all opacity-60 cursor-not-allowed">
-                Próximamente
-              </button>
-            </div>
+            <motion.div
+              key={index}
+              initial={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.6 }}
+              className="card-lift bg-cream rounded-2xl p-8 border border-gold/10"
+            >
+              <div className="text-3xl mb-4">{space.icon}</div>
+              <h3 className="text-lg font-serif text-charcoal mb-2">{space.title}</h3>
+              <p className="text-stone text-sm leading-relaxed">{space.desc}</p>
+              <span className="mt-4 inline-block text-xs text-stone/50 uppercase tracking-wider">Próximamente</span>
+            </motion.div>
           ))}
         </div>
 
         {/* Newsletter */}
-        <div className="mt-16 bg-gradient-to-r from-[#c18e98]/10 to-[#F9F0F3] rounded-2xl p-8 md:p-12 text-center">
-          <h3 className="text-2xl md:text-3xl font-bold text-[#c18e98] mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
-            Recibe Belong en tu bandeja de entrada
+        <motion.div
+          initial={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mt-20 bg-pale-rosewood rounded-2xl p-10 md:p-16 text-center"
+        >
+          <h3 className="text-2xl md:text-3xl font-serif text-charcoal mb-4">
+            Recibe Belong en tu <span className="text-rosewood italic">bandeja de entrada</span>
           </h3>
-          <p className="text-gray-600 mb-8 max-w-xl mx-auto">
+          <p className="text-stone max-w-xl mx-auto mb-8">
             Una vez al mes: el dato de género que debes conocer, un recurso educativo, una voz de la comunidad y las próximas actividades. Sin spam. Solo lo que importa.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
             <input
               type="email"
               placeholder="Tu correo electrónico"
-              className="px-4 py-3 rounded-full border border-[#c18e98]/30 focus:outline-none focus:border-[#c18e98] bg-white"
+              className="px-5 py-3 rounded-full border border-gold/20 focus:outline-none focus:border-gold bg-white text-sm"
             />
-            <button className="px-6 py-3 bg-[#c0941a] text-white font-medium rounded-full hover:bg-[#b07908] transition-colors opacity-60 cursor-not-allowed">
+            <button className="px-6 py-3 bg-charcoal text-white rounded-full text-sm font-medium hover:bg-rosewood transition-colors">
               Suscribirme
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
