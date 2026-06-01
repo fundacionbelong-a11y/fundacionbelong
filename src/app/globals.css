@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@theme inline {
+  --color-rosewood: #c18e98;
+  --color-gold: #c0941a;
+  --color-light-gold: #f4de53;
+  --color-dark-gold: #b07908;
+  --color-cream: #FBF5E8;
+  --color-pale-rosewood: #F9F0F3;
+  --color-background: #ffffff;
+  --color-foreground: #171717;
+  --font-sans: 'Open Sans', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+  --font-script: 'Dancing Script', cursive;
+  --font-display: 'Playfair Display', serif;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.gradient-gold {
+  background: linear-gradient(135deg, var(--color-light-gold), var(--color-gold), var(--color-dark-gold));
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--color-light-gold), var(--color-gold), var(--color-dark-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

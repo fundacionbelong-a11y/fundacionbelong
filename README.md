@@ -1,99 +1,36 @@
-# Belong Coming Soon 🌐
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Página "Coming Soon" para Fundación Belong - lista para deploy en Vercel.
+## Getting Started
 
----
-
-## 🚀 Deploy rápido (3 pasos)
-
-### Paso 1: Subir a GitHub
+First, run the development server:
 
 ```bash
-# Crear repo en GitHub (no inicializar con README)
-# Luego correr estos comandos:
-
-git add .
-git commit -m "Initial: Belong coming soon"
-git branch -M main
-
-# Reemplaza TU_USUARIO con tu usuario de GitHub
-git remote add origin https://github.com/TU_USUARIO/fundacionbelong.git
-git push -u origin main
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-### Paso 2: Conectar a Vercel
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-1. Ve a [vercel.com](https://vercel.com) → Sign up con GitHub
-2. Click **"Add New Project"**
-3. Importa `fundacionbelong` desde GitHub
-4. Click **Deploy** (no necesitas cambiar nada)
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-### Paso 3: Conectar dominios
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-En Vercel, ve a **Project → Settings → Domains**:
+## Learn More
 
-Agrega:
-- `fundacionbelong.com`
-- `fundacionbelong.org`
-- `fundacionbelong.co`
+To learn more about Next.js, take a look at the following resources:
 
-#### Configuración DNS en Namecheap:
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-Para cada dominio:
-1. Ve a **Domain List → Manage**
-2. En **Nameservers** → **Custom DNS**
-3. Agrega:
-   - `ns1.vercel-dns.com`
-   - `ns2.vercel-dns.com`
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-O si prefieres no cambiar nameservers, usa **Advanced DNS**:
-- Tipo **A Record** → Host `@` → Value `76.76.21.21`
-- Tipo **CNAME** → Host `www` → Value `cname.vercel-dns.com`
+## Deploy on Vercel
 
----
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-## 🔄 Actualizar el sitio
-
-Cuando quieras cambiar algo:
-
-```bash
-# 1. Editar index.html (o pedirle a Alfred que lo edite)
-# 2. Commit y push
-git add .
-git commit -m "Update: nuevo texto"
-git push origin main
-```
-
-Vercel se actualiza automáticamente en ~30 segundos.
-
----
-
-## 📁 Estructura
-
-```
-belong-coming-soon/
-├── index.html          # Página principal
-├── README.md           # Este archivo
-└── .git/               # Repo git
-```
-
----
-
-## 🎨 Personalizar
-
-Editar `index.html`:
-- **Logo/Brand**: Línea 189 (`<div class="logo">`)
-- **Tagline**: Línea 190 (`<div class="tagline">`)
-- **Descripción**: Líneas 198-201 (`<div class="description">`)
-- **Colores**: Líneas 18-19 (gradiente CSS)
-- **Año**: Línea 226 (`© 2026`)
-
----
-
-## 📞 Soporte
-
-¿Problemas? Alfred puede ayudarte a actualizar el código.
-
----
-
-*Belong Education - Learning that leads to belonging*
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
