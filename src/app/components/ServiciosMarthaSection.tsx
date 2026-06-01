@@ -56,8 +56,8 @@ export default function ServiciosMarthaSection() {
         {/* Team */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           {[
-            { name: 'Martha Cano', role: 'Academia e investigación', desc: 'Doctorados en equidad de género organizacional. Docencia universitaria. Investigación aplicada en brechas de género y cambio cultural.', img: 'martha-cano.jpg', color: 'rosewood' },
-            { name: 'Pamela López', role: 'Corporativo e industria tech', desc: 'Líder de inclusión de género en AWS. Directora General MujeresTIC.org. 15+ años de experiencia en IBM y AWS.', img: 'pamela-lopez.jpg', color: 'gold' },
+            { name: 'Pamela López', role: 'Corporativo e industria tech', desc: 'Líder de inclusión de género en AWS. Directora General MujeresTIC.org. 15+ años de experiencia en IBM y AWS.', img: '/fundacionbelong/pamela-lopez.jpg', color: 'gold' },
+            { name: 'Martha Cano', role: 'Academia e investigación', desc: 'Doctorados en equidad de género organizacional. Docencia universitaria. Investigación aplicada en brechas de género y cambio cultural.', img: '/fundacionbelong/martha-cano.jpg', color: 'rosewood' },
           ].map((person, i) => (
             <motion.div
               key={i}
