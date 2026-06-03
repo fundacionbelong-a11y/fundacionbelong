@@ -20,46 +20,56 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Apple-style navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-charcoal/90 backdrop-blur-xl border-b border-white/10">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex items-center justify-between h-12">
+      {/* Apple-style navigation — taller, bolder */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-charcoal/95 backdrop-blur-xl border-b border-white/10">
+        <div className="max-w-6xl mx-auto px-4 md:px-6">
+          <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <Link href="/" className="flex-shrink-0">
               <img 
                 src="/fundacionbelong/logo-belong.png" 
                 alt="Belong" 
-                className="h-6 w-auto brightness-0 invert opacity-90 hover:opacity-100 transition-opacity" 
+                className="h-9 md:h-11 w-auto brightness-0 invert opacity-90 hover:opacity-100 transition-opacity duration-300" 
               />
             </Link>
 
             {/* Desktop navigation - Apple style */}
-            <div className="hidden md:flex items-center justify-center flex-1 gap-8">
+            <div className="hidden md:flex items-center justify-center flex-1 gap-10">
               {navItems.map((item) => (
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={`text-xs font-medium tracking-wide transition-colors duration-200 ${
+                  className={`text-sm font-medium tracking-wide transition-all duration-300 relative group ${
                     pathname === item.href
-                      ? 'text-white/90'
-                      : 'text-white/50 hover:text-white/80'
+                      ? 'text-white'
+                      : 'text-white/50 hover:text-white/90'
                   }`}
                 >
                   {item.label}
+                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-gold transition-all duration-300 ${pathname === item.href ? 'w-full' : 'w-0 group-hover:w-full'}`} />
                 </Link>
               ))}
             </div>
 
+            <div className="hidden md:block">
+              <Link 
+                href="/contacto"
+                className="px-5 py-2.5 bg-white/10 hover:bg-gold text-white hover:text-charcoal text-sm font-medium rounded-full transition-all duration-300"
+              >
+                Contacto
+              </Link>
+            </div>
+
             {/* Mobile: horizontal scrollable links */}
             <div className="md:hidden flex-1 overflow-x-auto scrollbar-hide">
-              <div className="flex items-center gap-4 px-2">
-                {navItems.slice(0, 5).map((item) => (
+              <div className="flex items-center gap-5 px-2">
+                {navItems.slice(0, 6).map((item) => (
                   <Link
                     key={item.label}
                     href={item.href}
-                    className={`text-xs font-medium tracking-wide whitespace-nowrap transition-colors ${
+                    className={`text-sm font-medium tracking-wide whitespace-nowrap transition-colors ${
                       pathname === item.href
-                        ? 'text-white/90'
+                        ? 'text-white'
                         : 'text-white/50 hover:text-white/80'
                     }`}
                   >
@@ -72,7 +82,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </nav>
 
-      <div className="pt-12">
+      <div className="pt-16 md:pt-20">
         {children}
       </div>
 

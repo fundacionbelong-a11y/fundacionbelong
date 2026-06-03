@@ -78,7 +78,7 @@ export default function ContactSection() {
           </h2>
           <div className="gold-line mx-auto" />
           <p className="text-stone mt-6 max-w-2xl mx-auto font-light">
-            ¿Quieres transformar la cultura de tu organización? ¿Tienes una pregunta? ¿Quieres colaborar? Escríbenos.
+            ¿Quieres transformar la cultura de tu organización? ¿Como padre, educador o persona quieres sentir que perteneces? ¿Tienes una pregunta? ¿Quieres colaborar? Escríbenos.
           </p>
         </div>
 

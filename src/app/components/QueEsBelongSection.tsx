@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const pillars = [
   { letter: 'E', title: 'Educamos', desc: 'Creamos y compartimos conocimiento sobre género, pertenencia e inclusión.' },
-  { letter: 'T', title: 'Transformamos', desc: 'Acompañamos organizaciones con metodologías probadas para cerrar brechas culturales.' },
+  { letter: 'T', title: 'Transformamos', desc: 'Acompañamos organizaciones, familias y personas con metodologías probadas para cerrar brechas culturales y construir entornos donde todas puedan pertenecer.' },
   { letter: 'C', title: 'Conectamos', desc: 'Construimos comunidad donde las personas encuentran pares, inspiración y soporte.' },
 ];
 
@@ -67,12 +67,25 @@ export default function QueEsBelongSection() {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-pale-rosewood">
-              <div className="absolute inset-0 bg-gradient-to-br from-rosewood/5 to-gold/10" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <img src="/fundacionbelong/logo-belong.png" alt="Belong" className="w-2/3 opacity-20" />
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-pale-rosewood via-white to-cream border border-gold/10">
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
+                <div className="mb-8">
+                  <img src="/fundacionbelong/logo-belong.png" alt="Belong" className="w-24 opacity-40 mx-auto" />
+                </div>
+                <div className="space-y-2 mb-8">
+                  <p className="text-4xl md:text-5xl font-serif text-charcoal/20">Be.</p>
+                  <p className="text-4xl md:text-5xl font-serif text-gold/40">BeU.</p>
+                  <p className="text-4xl md:text-5xl font-serif text-rosewood/40">Belong.</p>
+                </div>
+                <p className="text-stone/40 text-sm font-light tracking-wide">Ser. Ser tú. Pertenecer.</p>
+                <div className="absolute bottom-8 left-8 right-8">
+                  <div className="flex gap-2 justify-center">
+                    {['E', 'T', 'C'].map(l => (
+                      <span key={l} className="w-8 h-8 rounded-full bg-gradient-to-br from-light-gold/30 to-gold/30 flex items-center justify-center text-gold font-serif text-sm">{l}</span>
+                    ))}
+                  </div>
+                </div>
               </div>
-              {/* Floating accent */}
               <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gold/10 rounded-full blur-2xl" />
               <div className="absolute -top-6 -right-6 w-24 h-24 bg-rosewood/10 rounded-full blur-2xl" />
             </div>

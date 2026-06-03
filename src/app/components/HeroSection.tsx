@@ -36,7 +36,7 @@ export default function HeroSection() {
           transition={{ duration: 1, delay: 0.6 }}
           className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium text-charcoal leading-[1.1] mb-8 max-w-4xl mx-auto"
         >
-          Construimos comunidades donde{' '}
+          Construimos con las comunidades para que{' '}
           <span className="text-rosewood italic">tod@s</span>{' '}
           sientan que{' '}
           <span className="text-gradient-gold">pertenecen</span>
@@ -55,7 +55,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 1 }}
           className="text-lg md:text-xl text-stone max-w-2xl mx-auto mb-12 leading-relaxed font-light"
         >
-          Acompañamos a empresas, instituciones y comunidades en la construcción de culturas de pertenencia, con equidad de género, liderazgo inclusivo y herramientas que generan cambio medible.
+          Acompañamos a empresas, instituciones, comunidades, familias y personas en la construcción de culturas de pertenencia, con equidad de género, liderazgo inclusivo y herramientas que generan cambio medible.
         </motion.p>
         
         <motion.div 

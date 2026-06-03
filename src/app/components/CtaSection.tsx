@@ -24,7 +24,7 @@ export default function CtaSection() {
           </p>
           <h2 className="text-3xl md:text-5xl font-serif font-medium leading-tight mb-8">
             ¿List@ para construir una cultura donde{' '}
-            <span className="text-rosewood italic">el talento se quede</span> y lidere?
+            <span className="text-rosewood italic">tod@s puedan ser, crecer y pertenecer</span>?
           </h2>
           
           <a
