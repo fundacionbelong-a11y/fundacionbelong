@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import EducacionPodcastSection from '../components/EducacionPodcastSection';
 import Layout from '../components/Layout';
+
+export const metadata: Metadata = {
+  title: 'Pamela López — Fundadora',
+  description: 'Pamela López, fundadora de Fundación Belong. Líder en equidad de género, diversidad e inclusión en Colombia con amplia trayectoria transformando organizaciones y comunidades.',
+  alternates: { canonical: 'https://www.fundacionbelong.co/pamela/' },
+};
 
 export default function PamelaPage() {
   return (
