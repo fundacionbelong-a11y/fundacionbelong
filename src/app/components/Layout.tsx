@@ -6,15 +6,27 @@ import { usePathname } from 'next/navigation';
 
 const navItems = [
   { label: 'Inicio', href: '/' },
-  { label: 'Conocimiento', href: '#educacion' },
-  { label: 'Charlas', href: '#charlas' },
-  { label: 'Servicios', href: '#servicios' },
-  { label: 'Comunidad', href: '#comunidad' },
+  { label: 'Conocimiento', href: '/' },
+  { label: 'Charlas', href: '/charlas' },
+  { label: 'Servicios', href: '/servicios' },
+  { label: 'Comunidad', href: '/comunidad' },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const id = href.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      setMobileMenuOpen(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -38,14 +50,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   <a
                     key={item.label}
                     href={item.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      const id = item.href.replace('#', '');
-                      const element = document.getElementById(id);
-                      if (element) {
-                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                      }
-                    }}
+                    onClick={(e) => handleAnchorClick(e, item.href)}
                     className={`text-sm font-medium tracking-wide transition-all duration-300 relative group ${
                       pathname === item.href
                         ? 'text-white'
@@ -89,15 +94,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     <a
                       key={item.label}
                       href={item.href}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        const id = item.href.replace('#', '');
-                        const element = document.getElementById(id);
-                        if (element) {
-                          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }
-                        setMobileMenuOpen(false);
-                      }}
+                      onClick={(e) => handleAnchorClick(e, item.href)}
                       className={`text-sm font-medium tracking-wide whitespace-nowrap transition-colors ${
                         pathname === item.href
                           ? 'text-white'
@@ -154,14 +151,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     {item.href.startsWith('#') ? (
                       <a 
                         href={item.href} 
-                        onClick={(e) => {
-                          e.preventDefault();
-                          const id = item.href.replace('#', '');
-                          const element = document.getElementById(id);
-                          if (element) {
-                            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                          }
-                        }}
+                        onClick={(e) => handleAnchorClick(e, item.href)}
                         className="text-charcoal/50 hover:text-charcoal transition-colors text-sm"
                       >
                         {item.label}
