@@ -22,8 +22,7 @@ export default function FooterSection() {
               Matrícula S00067863
             </p>
             <p className="text-white/40 text-sm">
-              Bogotá, Colombia<br/>
-              CL 118 No. 11A-05
+              Bogotá, Colombia
             </p>
           </div>
 

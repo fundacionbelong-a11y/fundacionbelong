@@ -98,8 +98,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 Matrícula S00067863
               </p>
               <p className="text-charcoal/40 text-sm">
-                Bogotá, Colombia<br/>
-                CL 118 No. 11A-05
+                Bogotá, Colombia
               </p>
             </div>
 
