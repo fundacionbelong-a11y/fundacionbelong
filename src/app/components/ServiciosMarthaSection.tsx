@@ -56,8 +56,8 @@ export default function ServiciosMarthaSection() {
         {/* Team — circular profile cards */}
         <div className="grid md:grid-cols-2 gap-8 mb-20">
           {[
-            { name: 'Pamela López', role: 'Corporativo e industria tech', desc: 'Líder de inclusión de género en AWS. Directora General MujeresTIC.org. 15+ años de experiencia en IBM y AWS.', img: '/fundacionbelong/pamela-lopez.jpg', color: 'gold', stats: ['15+ años tech', 'AWS, IBM', 'MujeresTIC'] },
-            { name: 'Martha Cano', role: 'Academia e investigación', desc: 'Doctorado en equidad de género organizacional. Docencia universitaria. Investigación aplicada en brechas de género y cambio cultural.', img: '/fundacionbelong/martha-cano.jpg', color: 'rosewood', stats: ['Doctorado', 'Investigación', 'Docencia'] },
+            { name: 'Pamela López', role: 'Corporativo e industria tech', desc: 'Líder de inclusión de género en AWS. Directora General MujeresTIC.org. 15+ años de experiencia en IBM y AWS.', img: '/pamela-lopez.jpg', color: 'gold', stats: ['15+ años tech', 'AWS, IBM', 'MujeresTIC'] },
+            { name: 'Martha Cano', role: 'Academia e investigación', desc: 'Doctorado en equidad de género organizacional. Docencia universitaria. Investigación aplicada en brechas de género y cambio cultural.', img: '/martha-cano.jpg', color: 'rosewood', stats: ['Doctorado', 'Investigación', 'Docencia'] },
           ].map((person, i) => (
             <motion.div
               key={i}

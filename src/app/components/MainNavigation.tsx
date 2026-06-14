@@ -30,7 +30,7 @@ export default function MainNavigation({ activeTab, onTabChange }: NavProps) {
             onClick={() => onTabChange('inicio')}
             className="flex items-center gap-2"
           >
-            <img src="/fundacionbelong/logo-belong.png" alt="Belong" className="h-8 w-auto" />
+            <img src="/logo-belong.png" alt="Belong" className="h-8 w-auto" />
           </button>
 
           {/* Desktop tabs */}

@@ -32,7 +32,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <a href="#hero" className="flex items-center gap-3">
-            <img src="/fundacionbelong/logo-belong.png" alt="Belong" className="h-10 w-auto" />
+            <img src="/logo-belong.png" alt="Belong" className="h-10 w-auto" />
           </a>
           
           <div className="hidden lg:flex items-center gap-8">

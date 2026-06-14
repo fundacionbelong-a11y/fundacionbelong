@@ -18,7 +18,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
         >
-          <img src="/fundacionbelong/logo-belong.png" alt="Fundación Belong" className="h-16 md:h-20 w-auto mx-auto mb-10" />
+          <img src="/logo-belong.png" alt="Fundación Belong" className="h-16 md:h-20 w-auto mx-auto mb-10" />
         </motion.div>
         
         <motion.p 

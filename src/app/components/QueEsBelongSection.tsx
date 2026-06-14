@@ -70,7 +70,7 @@ export default function QueEsBelongSection() {
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-pale-rosewood via-white to-cream border border-gold/10">
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
                 <div className="mb-8">
-                  <img src="/fundacionbelong/logo-belong.png" alt="Belong" className="w-24 opacity-40 mx-auto" />
+                  <img src="/logo-belong.png" alt="Belong" className="w-24 opacity-40 mx-auto" />
                 </div>
                 <div className="space-y-2 mb-8">
                   <p className="text-4xl md:text-5xl font-serif text-charcoal/20">Be.</p>

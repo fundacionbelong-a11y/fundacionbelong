@@ -23,7 +23,7 @@ export default function SobrePamelaSection() {
               {/* Main image container */}
               <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-gradient-to-br from-pale-rosewood to-cream relative">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <img src="/fundacionbelong/pamela-lopez.jpg" alt="Pamela López" className="w-full h-full object-cover" />
+                  <img src="/pamela-lopez.jpg" alt="Pamela López" className="w-full h-full object-cover" />
                 </div>
                 {/* Overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/20 via-transparent to-transparent" />

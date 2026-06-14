@@ -27,7 +27,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             {/* Logo */}
             <Link href="/" className="flex-shrink-0">
               <img 
-                src="/fundacionbelong/logo-belong.png" 
+                src="/logo-belong.png" 
                 alt="Belong" 
                 className="h-9 md:h-11 w-auto brightness-0 invert opacity-90 hover:opacity-100 transition-opacity duration-300" 
               />
@@ -91,7 +91,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-12 gap-12 mb-12">
             <div className="md:col-span-4">
-              <img src="/fundacionbelong/logo-belong.png" alt="Belong" className="h-10 w-auto mb-6" />
+              <img src="/logo-belong.png" alt="Belong" className="h-10 w-auto mb-6" />
               <p className="text-charcoal/50 text-sm mb-4">
                 Fundación Belong<br/>
                 NIT 902.037.750-8<br/>

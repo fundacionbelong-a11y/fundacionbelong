@@ -15,7 +15,7 @@ export default function FooterSection() {
         <div className="grid md:grid-cols-12 gap-12 mb-16">
           {/* Logo + Info */}
           <div className="md:col-span-4">
-            <img src="/fundacionbelong/logo-belong.png" alt="Belong" className="h-10 w-auto mb-6 brightness-0 invert" />
+            <img src="/logo-belong.png" alt="Belong" className="h-10 w-auto mb-6 brightness-0 invert" />
             <p className="text-white/50 text-sm mb-4">
               Fundación Belong<br/>
               NIT 902.037.750-8<br/>
