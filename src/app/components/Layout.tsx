@@ -38,6 +38,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   <a
                     key={item.label}
                     href={item.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const id = item.href.replace('#', '');
+                      const element = document.getElementById(id);
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }
+                    }}
                     className={`text-sm font-medium tracking-wide transition-all duration-300 relative group ${
                       pathname === item.href
                         ? 'text-white'
@@ -81,6 +89,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     <a
                       key={item.label}
                       href={item.href}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        const id = item.href.replace('#', '');
+                        const element = document.getElementById(id);
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                        setMobileMenuOpen(false);
+                      }}
                       className={`text-sm font-medium tracking-wide whitespace-nowrap transition-colors ${
                         pathname === item.href
                           ? 'text-white'
@@ -135,7 +152,18 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 {navItems.map((item) => (
                   <li key={item.label}>
                     {item.href.startsWith('#') ? (
-                      <a href={item.href} className="text-charcoal/50 hover:text-charcoal transition-colors text-sm">
+                      <a 
+                        href={item.href} 
+                        onClick={(e) => {
+                          e.preventDefault();
+                          const id = item.href.replace('#', '');
+                          const element = document.getElementById(id);
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                          }
+                        }}
+                        className="text-charcoal/50 hover:text-charcoal transition-colors text-sm"
+                      >
                         {item.label}
                       </a>
                     ) : (
