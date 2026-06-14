@@ -5,13 +5,12 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const navItems = [
-  { href: '/', label: 'Inicio' },
-  { href: '/nosotros', label: 'Nosotros' },
-  { href: '/pamela', label: 'Pamela' },
-  { href: '/servicios', label: 'Servicios' },
-  { href: '/charlas', label: 'Charlas' },
-  { href: '/comunidad', label: 'Comunidad' },
-  { href: '/contacto', label: 'Contacto' },
+  { label: 'Inicio', href: '/' },
+  { label: 'Conocimiento', href: '#educacion' },
+  { label: 'Charlas', href: '#charlas' },
+  { label: 'Servicios', href: '#servicios' },
+  { label: 'Comunidad', href: '#comunidad' },
+  { label: 'Contacto', href: '#contacto' },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -33,21 +32,36 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               />
             </Link>
 
-            {/* Desktop navigation - Apple style */}
+            {/* Desktop navigation */}
             <div className="hidden md:flex items-center justify-center flex-1 gap-10">
               {navItems.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className={`text-sm font-medium tracking-wide transition-all duration-300 relative group ${
-                    pathname === item.href
-                      ? 'text-white'
-                      : 'text-white/50 hover:text-white/90'
-                  }`}
-                >
-                  {item.label}
-                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-gold transition-all duration-300 ${pathname === item.href ? 'w-full' : 'w-0 group-hover:w-full'}`} />
-                </Link>
+                item.href.startsWith('#') ? (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    className={`text-sm font-medium tracking-wide transition-all duration-300 relative group ${
+                      pathname === item.href
+                        ? 'text-white'
+                        : 'text-white/50 hover:text-white/90'
+                    }`}
+                  >
+                    {item.label}
+                    <span className={`absolute -bottom-1 left-0 h-0.5 bg-gold transition-all duration-300 ${pathname === item.href ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+                  </a>
+                ) : (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className={`text-sm font-medium tracking-wide transition-all duration-300 relative group ${
+                      pathname === item.href
+                        ? 'text-white'
+                        : 'text-white/50 hover:text-white/90'
+                    }`}
+                  >
+                    {item.label}
+                    <span className={`absolute -bottom-1 left-0 h-0.5 bg-gold transition-all duration-300 ${pathname === item.href ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+                  </Link>
+                )
               ))}
             </div>
 
@@ -64,17 +78,31 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className="md:hidden flex-1 overflow-x-auto scrollbar-hide">
               <div className="flex items-center gap-5 px-2">
                 {navItems.slice(0, 6).map((item) => (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    className={`text-sm font-medium tracking-wide whitespace-nowrap transition-colors ${
-                      pathname === item.href
-                        ? 'text-white'
-                        : 'text-white/50 hover:text-white/80'
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
+                  item.href.startsWith('#') ? (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      className={`text-sm font-medium tracking-wide whitespace-nowrap transition-colors ${
+                        pathname === item.href
+                          ? 'text-white'
+                          : 'text-white/50 hover:text-white/80'
+                      }`}
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      className={`text-sm font-medium tracking-wide whitespace-nowrap transition-colors ${
+                        pathname === item.href
+                          ? 'text-white'
+                          : 'text-white/50 hover:text-white/80'
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  )
                 ))}
               </div>
             </div>
@@ -107,9 +135,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <ul className="space-y-3">
                 {navItems.map((item) => (
                   <li key={item.label}>
-                    <Link href={item.href} className="text-charcoal/50 hover:text-charcoal transition-colors text-sm">
-                      {item.label}
-                    </Link>
+                    {item.href.startsWith('#') ? (
+                      <a href={item.href} className="text-charcoal/50 hover:text-charcoal transition-colors text-sm">
+                        {item.label}
+                      </a>
+                    ) : (
+                      <Link href={item.href} className="text-charcoal/50 hover:text-charcoal transition-colors text-sm">
+                        {item.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
