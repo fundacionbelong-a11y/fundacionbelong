@@ -1,11 +1,11 @@
-import EducacionPodcastSection from '../components/EducacionPodcastSection';
+import ConocimientoSection from '../components/ConocimientoSection';
 import Layout from '../components/Layout';
 
 export default function ConocimientoPage() {
   return (
     <Layout>
       <div className="pt-8">
-        <EducacionPodcastSection />
+        <ConocimientoSection />
       </div>
     </Layout>
   );
