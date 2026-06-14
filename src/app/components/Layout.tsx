@@ -10,7 +10,6 @@ const navItems = [
   { label: 'Charlas', href: '#charlas' },
   { label: 'Servicios', href: '#servicios' },
   { label: 'Comunidad', href: '#comunidad' },
-  { label: 'Contacto', href: '#contacto' },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {

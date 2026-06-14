@@ -47,32 +47,6 @@ export default function ComunidadSection() {
           </p>
         </motion.div>
 
-        {/* Platform options */}
-        <div className="grid md:grid-cols-3 gap-6 mb-20">
-          {[
-            { name: 'Circle.so', desc: 'Plataforma profesional con foros, eventos y cursos. Ideal para comunidades estructuradas.', recommended: true },
-            { name: 'Discord', desc: 'Espacio dinámico con canales por tema, voz en vivo y una experiencia más casual.', recommended: false },
-            { name: 'WhatsApp moderado', desc: 'Fácil para empezar. Grupos por tema con moderación y código de conducta.', recommended: false },
-          ].map((platform, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.6 }}
-              className={`rounded-2xl p-6 border ${platform.recommended ? 'bg-gold/5 border-gold/30' : 'bg-white border-gold/10'} card-lift`}
-            >
-              {platform.recommended && (
-                <span className="inline-block px-3 py-1 bg-gold text-white text-xs font-medium rounded-full mb-3">
-                  Recomendado
-                </span>
-              )}
-              <h3 className="text-lg font-serif text-charcoal mb-2">{platform.name}</h3>
-              <p className="text-sm text-stone leading-relaxed">{platform.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-
         {/* Tabs navigation */}
         <div className="flex justify-center gap-3 mb-12">
           {[
