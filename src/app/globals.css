@@ -1,14 +1,14 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
 
 @theme inline {
   --color-rosewood: #c18e98;
   --color-gold: #c0941a;
   --color-light-gold: #f4de53;
   --color-dark-gold: #b07908;
-  --color-cream: #FDFCF8;
-  --color-pale-rosewood: #FAF5F7;
-  --color-warm-white: #FFFBF5;
+  --color-cream: #ffffff;
+  --color-pale-rosewood: #ffffff;
+  --color-warm-white: #ffffff;
   --color-charcoal: #1a1a1a;
   --color-stone: #57534e;
   --color-background: #ffffff;
@@ -97,11 +97,11 @@ html {
 
 /* Soft gradient backgrounds */
 .bg-soft-cream {
-  background: linear-gradient(180deg, #FDFCF8 0%, #FFFBF5 100%);
+  background: #ffffff;
 }
 
 .bg-soft-rose {
-  background: linear-gradient(180deg, #FAF5F7 0%, #FDFCF8 100%);
+  background: #ffffff;
 }
 
 /* Text gradient gold */
