@@ -105,12 +105,14 @@ export default function EducacionPodcastSection() {
             </div>
 
             <div className="mt-10 flex gap-4">
-              <span className="px-4 py-2 bg-white/5 rounded-full text-xs text-white/40 border border-white/10">
-                Próximamente en Spotify
-              </span>
-              <span className="px-4 py-2 bg-white/5 rounded-full text-xs text-white/40 border border-white/10">
-                Apple Podcasts
-              </span>
+              <a
+                href="https://open.spotify.com/episode/34ZxHT1N8XT4Pt56eUHCLF?si=mwZeou5sQJe5pwyugl31gg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-white/5 rounded-full text-xs text-white/40 border border-white/10 hover:bg-gold/20 hover:text-white transition-all"
+              >
+                Escuchar en Spotify
+              </a>
             </div>
           </div>
         </motion.div>

@@ -41,7 +41,7 @@ export default function CharlasSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <p className="text-gold text-sm font-medium tracking-[0.3em] uppercase mb-4">Servicios</p>
+          <p className="text-gold text-sm font-medium tracking-[0.3em] uppercase mb-4">Experiencias</p>
           <h2 className="text-3xl md:text-5xl font-serif font-medium text-charcoal leading-tight mb-6">
             Charlas que <span className="text-gold">inspiran</span> y <span className="text-rosewood italic">activan</span>
           </h2>

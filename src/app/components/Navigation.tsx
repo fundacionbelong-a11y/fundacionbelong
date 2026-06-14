@@ -15,8 +15,7 @@ export default function Navigation() {
 
   const navItems = [
     { label: 'Inicio', href: '#hero' },
-    { label: 'Nosotros', href: '#que-es' },
-    { label: 'Pamela', href: '#pamela' },
+    { label: 'Conocimiento', href: '#educacion' },
     { label: 'Charlas', href: '#charlas' },
     { label: 'Servicios', href: '#servicios' },
     { label: 'Comunidad', href: '#comunidad' },

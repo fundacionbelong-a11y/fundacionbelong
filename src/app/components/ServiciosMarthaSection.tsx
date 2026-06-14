@@ -46,7 +46,6 @@ export default function ServiciosMarthaSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <p className="text-gold text-sm font-medium tracking-[0.3em] uppercase mb-4">Consultoría</p>
           <h2 className="text-3xl md:text-5xl font-serif font-medium text-charcoal leading-tight mb-6">
             Talento que se <span className="text-rosewood italic">queda</span>
           </h2>
@@ -88,6 +87,26 @@ export default function ServiciosMarthaSection() {
           ))}
         </div>
 
+        {/* Stats */}
+        <div className="bg-cream rounded-2xl p-8 md:p-12">
+          <h3 className="text-2xl font-serif text-charcoal text-center mb-10">
+            Por qué cerrar la brecha es <span className="text-rosewood italic">negocio</span>
+          </h3>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { value: '+15%', label: 'más probabilidad de superar a su industria', source: 'McKinsey MGI 2016' },
+              { value: '+15%', label: 'más rentabilidad con 30% mujeres en liderazgo', source: 'McKinsey MGI 2016' },
+              { value: '226%', label: 'retornos superiores al S&P 500', source: 'Fortune 1000' },
+              { value: '+8%', label: 'PIB para Colombia al reducir brecha salarial', source: 'Banco de la República' },
+            ].map((stat, i) => (
+              <div key={i} className="text-center">
+                <p className="text-3xl md:text-4xl font-serif text-gold mb-2">{stat.value}</p>
+                <p className="text-sm text-stone leading-snug mb-1">{stat.label}</p>
+                <p className="text-xs text-stone/50">{stat.source}</p>
+              </div>
+            ))}
+          </div>
+        </div>
         {/* Visual Roadmap — Ruta hacia la paridad */}
         <div className="mb-20">
           <div className="text-center mb-12">
@@ -135,10 +154,10 @@ export default function ServiciosMarthaSection() {
             </div>
             
             {/* Transversal element */}
-            <div className="mt-12 flex justify-center">
-              <div className="bg-charcoal rounded-2xl px-8 py-4 text-white flex items-center gap-4">
+            <div className="mt-12">
+              <div className="bg-charcoal rounded-2xl px-8 py-6 text-white flex items-center gap-4 w-full">
                 <span className="text-2xl">💬</span>
-                <div>
+                <div className="flex-1">
                   <p className="font-medium text-sm">Charlas transversales</p>
                   <p className="text-xs text-white/60">A lo largo de todo el proceso</p>
                 </div>
@@ -255,26 +274,6 @@ export default function ServiciosMarthaSection() {
           </AnimatePresence>
         </div>
 
-        {/* Stats */}
-        <div className="bg-cream rounded-2xl p-8 md:p-12">
-          <h3 className="text-2xl font-serif text-charcoal text-center mb-10">
-            Por qué cerrar la brecha es <span className="text-rosewood italic">negocio</span>
-          </h3>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { value: '+15%', label: 'más probabilidad de superar a su industria', source: 'McKinsey MGI 2016' },
-              { value: '+15%', label: 'más rentabilidad con 30% mujeres en liderazgo', source: 'McKinsey MGI 2016' },
-              { value: '226%', label: 'retornos superiores al S&P 500', source: 'Fortune 1000' },
-              { value: '+8%', label: 'PIB para Colombia al reducir brecha salarial', source: 'Banco de la República' },
-            ].map((stat, i) => (
-              <div key={i} className="text-center">
-                <p className="text-3xl md:text-4xl font-serif text-gold mb-2">{stat.value}</p>
-                <p className="text-sm text-stone leading-snug mb-1">{stat.label}</p>
-                <p className="text-xs text-stone/50">{stat.source}</p>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );
