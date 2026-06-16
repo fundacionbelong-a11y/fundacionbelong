@@ -4,12 +4,12 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const spaces = [
-  { icon: '💬', title: 'Género y Sociedad', desc: 'Debates sobre brechas de género, políticas públicas, noticias y tendencias que nos afectan a tod@s.' },
-  { icon: '🌱', title: 'Liderazgo y Carrera', desc: 'Conversaciones sobre trayectorias profesionales, negociación, visibilidad y liderazgo con propósito.' },
-  { icon: '💻', title: 'Entornos Digitales Seguros', desc: 'Privacidad, bienestar digital y cómo construir espacios tecnológicos más seguros e inclusivos.' },
-  { icon: '👩‍👧', title: 'Maternidad y Trabajo', desc: 'Vivencias, estrategias y apoyo mutuo para navegar la doble jornada y construir trayectorias con flexibilidad.' },
-  { icon: '🎓', title: 'Niñas y Jóvenes en STEM', desc: 'Para padres, docentes y jóvenes que quieren explorar carreras en ciencia y tecnología sin límites de género.' },
-  { icon: '🤝', title: 'Aliad@s', desc: 'Para ayudarnos y compartir historias. Un espacio para construir juntos, aprender y ser parte activa del cambio.' },
+  { img: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=400&fit=crop&auto=format&q=80', title: 'Género y Sociedad', desc: 'Debates sobre brechas de género, políticas públicas, noticias y tendencias que nos afectan a tod@s.' },
+  { img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=400&fit=crop&auto=format&q=80', title: 'Liderazgo y Carrera', desc: 'Conversaciones sobre trayectorias profesionales, negociación, visibilidad y liderazgo con propósito.' },
+  { img: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop&auto=format&q=80', title: 'Entornos Digitales Seguros', desc: 'Privacidad, bienestar digital y cómo construir espacios tecnológicos más seguros e inclusivos.' },
+  { img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop&auto=format&q=80', title: 'Maternidad y Trabajo', desc: 'Vivencias, estrategias y apoyo mutuo para navegar la doble jornada y construir trayectorias con flexibilidad.' },
+  { img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop&auto=format&q=80', title: 'Niñas y Jóvenes en STEM', desc: 'Para padres, docentes y jóvenes que quieren explorar carreras en ciencia y tecnología sin límites de género.' },
+  { img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&auto=format&q=80', title: 'Aliad@s', desc: 'Para ayudarnos y compartir historias. Un espacio para construir juntos, aprender y ser parte activa del cambio.' },
 ];
 
 export default function ComunidadSection() {
@@ -66,9 +66,12 @@ export default function ComunidadSection() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.6 }}
-                  className="card-lift bg-cream rounded-2xl p-8 border border-gold/10 hover:border-gold/30 transition-all"
+                  className="card-lift bg-white rounded-2xl border border-gold/10 hover:border-gold/30 transition-all overflow-hidden"
                 >
-                  <div className="text-3xl mb-4">{space.icon}</div>
+                  <div className="h-40 overflow-hidden">
+                    <img src={space.img} alt={space.title} className="w-full h-full object-cover" />
+                  </div>
+                  <div className="p-6">
                   <h3 className="text-lg font-serif text-charcoal mb-2">{space.title}</h3>
                   <p className="text-stone text-sm leading-relaxed mb-4">{space.desc}</p>
                   <div className="mt-4 p-4 bg-gold/5 rounded-xl border border-gold/10">
@@ -78,6 +81,7 @@ export default function ComunidadSection() {
                   <button className="mt-4 w-full py-2.5 bg-charcoal text-white rounded-full text-sm font-medium hover:bg-rosewood transition-all" onClick={() => window.location.href='mailto:fundacionbelong@gmail.com?subject=Interés%20en%20comunidad:%20'+encodeURIComponent(space.title)}>
                     Avísame cuando esté listo
                   </button>
+                  </div>
                 </motion.div>
               ))}
             </div>

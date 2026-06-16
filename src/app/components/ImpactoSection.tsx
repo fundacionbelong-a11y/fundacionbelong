@@ -13,17 +13,17 @@ const stats = [
 
 const pillars = [
   {
-    icon: '👧',
+    img: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&h=400&fit=crop&auto=format&q=80',
     title: 'Con las niñas',
     desc: 'Espacios seguros donde explorar, preguntar y descubrirse. Talleres de confianza, pensamiento crítico y asombro por la ciencia, la medicina, la tecnología y cualquier campo que elijan.',
   },
   {
-    icon: '🏠',
+    img: 'https://images.unsplash.com/photo-1559526324-593bc073d938?w=600&h=400&fit=crop&auto=format&q=80',
     title: 'Con los cuidadores principales',
     desc: 'Los mensajes más poderosos llegan en casa. Acompañamos a cuidadores principales a reconocer los patrones que heredamos y elegir conscientemente cuáles queremos romper.',
   },
   {
-    icon: '🎓',
+    img: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&h=400&fit=crop&auto=format&q=80',
     title: 'Con educadores',
     desc: 'Las aulas son el segundo hogar de una niña. Formamos a maestros y maestras en pedagogía que amplía posibilidades en lugar de definir roles.',
   },
@@ -179,11 +179,15 @@ export default function ImpactoSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1, duration: 0.6 }}
-                  className="card-lift bg-cream rounded-2xl p-8 border border-gold/10 text-center"
+                  className="card-lift bg-cream rounded-2xl border border-gold/10 overflow-hidden text-center"
                 >
-                  <div className="text-5xl mb-4">{pillar.icon}</div>
-                  <h3 className="text-xl font-serif text-charcoal mb-4">{pillar.title}</h3>
-                  <p className="text-stone leading-relaxed text-sm">{pillar.desc}</p>
+                  <div className="h-48 overflow-hidden">
+                    <img src={pillar.img} alt={pillar.title} className="w-full h-full object-cover" />
+                  </div>
+                  <div className="p-8">
+                    <h3 className="text-xl font-serif text-charcoal mb-4">{pillar.title}</h3>
+                    <p className="text-stone leading-relaxed text-sm">{pillar.desc}</p>
+                  </div>
                 </motion.div>
               ))}
             </div>
