@@ -125,8 +125,8 @@ export default function ServiciosMarthaSection() {
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4">
               {[
-                { num: '01', title: 'Test inicial', subtitle: 'de paridad', desc: 'Medición del punto de partida cultural con radar BELONG®', img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=200&h=200&fit=crop&auto=format&q=80' },
-                { num: '02', title: 'Diagnóstico', subtitle: 'profundo', desc: 'Análisis cuali-cuantitativo de brechas organizacionales', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&auto=format&q=80' },
+                { num: '01', title: 'Test inicial', subtitle: 'de paridad', desc: 'Medición del punto de partida cultural con radar BELONG®', img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=200&h=200&fit=crop&auto=format&q=80' },
+                { num: '02', title: 'Diagnóstico', subtitle: 'profundo', desc: 'Análisis cuali-cuantitativo de brechas organizacionales', img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=200&h=200&fit=crop&auto=format&q=80' },
                 { num: '03', title: 'Implementación', subtitle: 'y acompañamiento', desc: 'Herramientas probadas y consultoría continua', img: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=200&h=200&fit=crop&auto=format&q=80' },
                 { num: '04', title: 'Plan de acción', subtitle: 'con métricas', desc: 'Hoja de ruta con seguimiento y evaluación', img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=200&h=200&fit=crop&auto=format&q=80' },
               ].map((step, i) => (

@@ -9,7 +9,7 @@ const spaces = [
   { img: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop&auto=format&q=80', title: 'Entornos Digitales Seguros', desc: 'Privacidad, bienestar digital y cómo construir espacios tecnológicos más seguros e inclusivos.' },
   { img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop&auto=format&q=80', title: 'Maternidad y Trabajo', desc: 'Vivencias, estrategias y apoyo mutuo para navegar la doble jornada y construir trayectorias con flexibilidad.' },
   { img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop&auto=format&q=80', title: 'Niñas y Jóvenes en STEM', desc: 'Para padres, docentes y jóvenes que quieren explorar carreras en ciencia y tecnología sin límites de género.' },
-  { img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&auto=format&q=80', title: 'Aliad@s', desc: 'Para ayudarnos y compartir historias. Un espacio para construir juntos, aprender y ser parte activa del cambio.' },
+  { img: 'https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=600&h=400&fit=crop&auto=format&q=80', title: 'Aliad@s', desc: 'Para ayudarnos y compartir historias. Un espacio para construir juntos, aprender y ser parte activa del cambio.' },
 ];
 
 export default function ComunidadSection() {

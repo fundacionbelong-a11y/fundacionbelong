@@ -18,7 +18,7 @@ const pillars = [
     desc: 'Espacios seguros donde explorar, preguntar y descubrirse. Talleres de confianza, pensamiento crítico y asombro por la ciencia, la medicina, la tecnología y cualquier campo que elijan.',
   },
   {
-    img: 'https://images.unsplash.com/photo-1559526324-593bc073d938?w=600&h=400&fit=crop&auto=format&q=80',
+    img: 'https://images.unsplash.com/photo-1536640712-4d4c36ff0e4e?w=600&h=400&fit=crop&auto=format&q=80',
     title: 'Con los cuidadores principales',
     desc: 'Los mensajes más poderosos llegan en casa. Acompañamos a cuidadores principales a reconocer los patrones que heredamos y elegir conscientemente cuáles queremos romper.',
   },
