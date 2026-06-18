@@ -66,7 +66,7 @@ export default function SobrePamelaSection() {
               </p>
               
               <p className="text-stone leading-relaxed mb-6">
-                Con 15 años de experiencia en IBM y Amazon Web Services, combino rigor tecnológico con visión humana para diseñar modelos sostenibles de equidad y crecimiento. En AWS lideré la estrategia de la industria de pagos y la consolidación de Bre-B, así como el capítulo Women@Latam en Latinoamérica. Soy Directora General de MujeresTIC.org.
+                Con 15 años de experiencia en IBM y Amazon Web Services, combino rigor tecnológico con visión humana para diseñar modelos sostenibles de equidad y crecimiento. En AWS lideré la estrategia de la industria de pagos y la consolidación de Bre-B, así como el capítulo de desarrollo y retención de mujeres en Women@Latam. Soy Directora General de MujeresTIC.
               </p>
             </div>
             
