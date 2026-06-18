@@ -79,21 +79,22 @@ export default function ImpactoSection() {
           >
             <p className="text-gold text-sm font-medium tracking-[0.3em] uppercase mb-6">Nuestro Impacto</p>
             <h2 className="text-4xl md:text-6xl font-serif font-medium text-charcoal leading-tight mb-8">
-              Una niña aprende muchas cosas antes de los <span className="text-rosewood italic">12 años</span>.
+              Cambiar el futuro de las mujeres empieza por cambiar el <span className="text-rosewood italic">presente de las niñas</span>.
             </h2>
             <div className="gold-line mx-auto mb-10" />
             <div className="space-y-6 text-lg text-stone leading-relaxed font-light max-w-3xl mx-auto">
               <p>
-                Aprende que ser bonita importa más que ser curiosa. Aprende que la ciencia, la tecnología y la medicina son territorio de otros. 
-                Aprende que su mayor logro será construir una familia. Aprende que su cuerpo define cuánto vale.
+                Desde pequeña, una niña recibe mensajes sobre lo que puede llegar a ser: que la ciencia es territorio de otros,
+                que su cuerpo define cuánto vale, que hay sueños que simplemente no son para ella.
               </p>
               <p>
-                Esas lecciones no vienen de sus capacidades — vienen de mensajes que la cultura repite en casa, en el salón de clase, 
-                en las pantallas y en lo que celebramos y lo que ignoramos.
+                Esos mensajes no llegan de golpe — se acumulan en casa, en el salón de clase, en las pantallas y en todo lo que
+                la cultura celebra y lo que decide ignorar.
               </p>
               <p className="text-charcoal font-medium">
-                En Fundación Belong creemos que el cambio más poderoso ocurre antes de que esas lecciones se vuelvan creencias. 
-                Por eso llegamos temprano.
+                En Fundación Belong creemos que el momento de actuar es en la infancia, antes de que esos mensajes se conviertan en límites.
+                Porque cuando una niña siente que pertenece, que su curiosidad importa y que puede elegir su propio camino,
+                todo lo que viene después es diferente.
               </p>
             </div>
           </motion.div>
