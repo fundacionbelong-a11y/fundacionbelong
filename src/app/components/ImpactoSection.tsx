@@ -33,26 +33,26 @@ const waysToJoin = [
   {
     profile: 'Si eres empresa',
     desc: 'Contrata una charla o consultoría y el impacto llega dos veces: a tu equipo y a una comunidad.',
-    cta: 'Conoce nuestros servicios',
-    link: '/servicios',
+    cta: 'Escríbenos',
+    link: 'mailto:fundacionbelong@gmail.com?subject=Quiero%20contratar%20a%20Belong',
   },
   {
     profile: 'Si eres profesional en tecnología, medicina o ciencias',
     desc: 'Sé mentora del Programa Raíces. Una conversación tuya puede abrir un mundo para una niña.',
     cta: 'Quiero ser mentora',
-    link: '#',
+    link: 'mailto:fundacionbelong@gmail.com?subject=Quiero%20ser%20mentora%20en%20Programa%20Ra%C3%ADces',
   },
   {
     profile: 'Si eres educador o educadora',
     desc: 'Lleva Programa Raíces a tu institución. Trabajamos con colegios, fundaciones y comunidades.',
     cta: 'Llevemos Raíces a mi institución',
-    link: '#',
+    link: 'mailto:fundacionbelong@gmail.com?subject=Llevar%20Programa%20Ra%C3%ADces%20a%20mi%20instituci%C3%B3n',
   },
   {
     profile: 'Si quieres apoyar directamente',
     desc: 'Tu aporte financia talleres y acceso para niñas en comunidades vulnerables.',
     cta: 'Apoyar Programa Raíces',
-    link: '#',
+    link: 'mailto:fundacionbelong@gmail.com?subject=Quiero%20apoyar%20el%20Programa%20Ra%C3%ADces',
   },
 ];
 
