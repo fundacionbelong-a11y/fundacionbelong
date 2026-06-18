@@ -25,20 +25,77 @@ const glossary = [
   { term: 'Techo de cristal', def: 'Barreras invisibles que limitan el avance de las mujeres y grupos subrepresentados hacia posiciones de liderazgo, aunque no estén escritas en ninguna política.' },
 ];
 
-// Recursos: links reales a contenido externo
+// Recursos: artículos, estudios, libros, documentales y cursos
 const resources = [
-  { type: 'Libro', title: 'Invisible Women', author: 'Caroline Criado Perez', desc: 'Cómo el mundo fue diseñado ignorando a las mujeres', url: 'https://www.amazon.com/Invisible-Women-Data-World-Designed/dp/1419729071' },
-  { type: 'Libro', title: 'Lean In', author: 'Sheryl Sandberg', desc: 'Mujeres, trabajo y voluntad de liderar', url: 'https://www.amazon.com/Lean-In-Women-Work-Will/dp/0385349947' },
-  { type: 'Libro', title: 'Dare to Lead', author: 'Brené Brown', desc: 'Liderazgo basado en valores y vulnerabilidad', url: 'https://www.amazon.com/Dare-Lead-Brave-Conversations-Hearts/dp/0399592520' },
-  { type: 'Libro', title: 'The Moment of Lift', author: 'Melinda Gates', desc: 'Igualdad de género y transformación global', url: 'https://www.amazon.com/Moment-Lift-Empowering-Women-Changes/dp/1250313570' },
-  { type: 'Documental', title: 'Miss Representation', author: 'Jennifer Siebel Newsom', desc: 'Cómo los medios representan a las mujeres', url: 'https://www.netflix.com' },
-  { type: 'Documental', title: 'Picture a Scientist', author: '2020', desc: 'La experiencia de las mujeres en la ciencia', url: 'https://www.pictureascientist.com' },
-  { type: 'Curso', title: 'Liderazgo inclusivo', author: 'Universidad de Colorado (Coursera)', desc: 'Gratuito con certificado auditable', url: 'https://www.coursera.org' },
-  { type: 'Curso', title: 'Gender and Sexuality', author: 'Coursera / Catalyst', desc: 'Diversity and Inclusion in the Workplace', url: 'https://www.edx.org' },
-  { type: 'Curso', title: 'Capacitaciones ONU Mujeres', author: 'ONU Mujeres', desc: 'Capacitaciones virtuales gratuitas en igualdad de género', url: 'https://onlinecourses.unwomen.org' },
+  // ARTÍCULOS
+  {
+    type: 'Artículo', title: 'Ladies First', author: 'Fundación Belong',
+    desc: 'Nuestro artículo sobre liderazgo femenino e inclusión en Colombia.',
+    url: '/ladies-first-belong.pdf', download: true,
+  },
+  // ESTUDIOS
+  {
+    type: 'Estudio', title: 'Brecha de género en Colombia',
+    author: 'DANE / ONU Mujeres — 3ª edición, noviembre 2024',
+    desc: 'Análisis integral sobre la desigualdad entre mujeres y hombres en Colombia: empleo, trabajo doméstico, participación política y violencia.',
+    url: 'https://www.dane.gov.co/files/investigaciones/genero/publicaciones/mujeres-y-hombre-brechas-de-genero-colombia-informe.pdf', download: true,
+  },
+  {
+    type: 'Estudio', title: 'Women in the Workplace 2025',
+    author: 'McKinsey & Company / LeanIn.org',
+    desc: 'El mayor estudio sobre mujeres en el lugar de trabajo, con datos de más de 120 empresas y 9.000 colaboradores.',
+    url: 'https://wiw-report.s3.us-east-1.amazonaws.com/Women_in_the_Workplace_2025.pdf', download: true,
+  },
+  {
+    type: 'Estudio', title: 'El progreso en el cumplimiento de los Objetivos de Desarrollo Sostenible',
+    author: 'ONU Mujeres — Gender Snapshot 2025',
+    desc: 'Medición del avance global en los ODS con perspectiva de género: economía, educación, salud y reducción de la pobreza.',
+    url: 'https://www.unwomen.org/sites/default/files/2025-11/progress-on-the-sustainable-development-goals-the-gender-snapshot-2025-es.pdf', download: true,
+  },
+  {
+    type: 'Estudio', title: 'Global Gender Gap Report 2025',
+    author: 'Foro Económico Mundial (WEF)',
+    desc: 'Benchmarking de paridad de género en 148 economías: participación económica, educación, salud y empoderamiento político.',
+    url: 'https://reports.weforum.org/docs/WEF_GGGR_2025.pdf', download: true,
+  },
+  {
+    type: 'Estudio', title: 'Cerrando Brechas',
+    author: 'ANDI — Asociación Nacional de Empresarios de Colombia',
+    desc: 'Guía para el sector empresarial colombiano sobre equidad de género: buenas prácticas, métricas y hoja de ruta.',
+    url: 'https://www.andi.com.co/Uploads/VERSIO%CC%81N%20WEB%20CERRANDO%20BRECHAS%20ANDI%20FINAL.pdf', download: true,
+  },
+  // LIBROS
+  {
+    type: 'Libro', title: 'Invisible Women', author: 'Caroline Criado Perez',
+    desc: 'Cómo el mundo fue diseñado ignorando a las mujeres.',
+    url: 'https://www.amazon.com/Invisible-Women-Data-World-Designed/dp/1419729071', download: false,
+  },
+  {
+    type: 'Libro', title: 'Lean In', author: 'Sheryl Sandberg',
+    desc: 'Mujeres, trabajo y voluntad de liderar.',
+    url: 'https://www.amazon.com/Lean-In-Women-Work-Will/dp/0385349947', download: false,
+  },
+  // DOCUMENTALES
+  {
+    type: 'Documental', title: 'Miss Representation', author: 'Jennifer Siebel Newsom',
+    desc: 'Cómo los medios representan a las mujeres.',
+    url: 'https://www.missrepresentation.org', download: false,
+  },
+  {
+    type: 'Documental', title: 'Picture a Scientist', author: '2020',
+    desc: 'La experiencia de las mujeres en la ciencia.',
+    url: 'https://www.pictureascientist.com', download: false,
+  },
+  // CURSOS
+  {
+    type: 'Curso', title: 'Yo sé de género',
+    author: 'ONU Mujeres — Training Centre',
+    desc: 'Serie de cursos virtuales gratuitos en español sobre igualdad de género, liderazgo y empoderamiento de las mujeres.',
+    url: 'https://portal.trainingcentre.unwomen.org/product-category/self-paced/yosedegenero/', download: false,
+  },
 ];
 
-const filters = ['Todos', 'Libro', 'Documental', 'Curso'];
+const filters = ['Todos', 'Artículo', 'Estudio', 'Libro', 'Documental', 'Curso'];
 
 export default function ConocimientoSection() {
   const [activeFilter, setActiveFilter] = useState('Todos');
@@ -119,11 +176,10 @@ export default function ConocimientoSection() {
         >
           <p className="text-gold text-sm font-medium tracking-[0.3em] uppercase mb-4">Recomendados por Belong</p>
           <h3 className="text-3xl md:text-4xl font-serif font-medium text-charcoal mb-4">
-            Recursos <span className="text-rosewood italic">curados</span>
+            Recursos
           </h3>
           <p className="text-stone mb-8 max-w-2xl">
-            Libros, documentales y cursos gratuitos seleccionados por Pamela López y Martha Cano. 
-            Belong no produce este contenido, pero lo selecciona con criterio.
+            Artículos, estudios, libros, documentales y cursos seleccionados por Pamela López y Martha Cano.
           </p>
 
           <div className="flex flex-wrap gap-2 mb-8">
@@ -152,29 +208,57 @@ export default function ConocimientoSection() {
                 transition={{ delay: i * 0.1, duration: 0.6 }}
                 className="card-lift bg-white rounded-2xl border border-gold/10 overflow-hidden"
               >
-                <div className="aspect-video bg-gradient-to-br from-pale-rosewood to-cream relative flex items-center justify-center">
-                  <span className="text-4xl">
-                    {resource.type === 'Libro' ? '📚' : resource.type === 'Documental' ? '🎬' : '🎓'}
-                  </span>
+                <div className={`aspect-video relative flex items-center justify-center ${
+                  resource.type === 'Estudio' ? 'bg-gradient-to-br from-gold/10 to-cream' :
+                  resource.type === 'Artículo' ? 'bg-gradient-to-br from-rosewood/10 to-cream' :
+                  resource.type === 'Libro' ? 'bg-gradient-to-br from-charcoal/5 to-cream' :
+                  resource.type === 'Documental' ? 'bg-gradient-to-br from-stone/10 to-cream' :
+                  'bg-gradient-to-br from-gold/5 to-cream'
+                }`}>
+                  {resource.type === 'Estudio' && (
+                    <svg className="w-10 h-10 text-gold/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+                  )}
+                  {resource.type === 'Artículo' && (
+                    <svg className="w-10 h-10 text-rosewood/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" /></svg>
+                  )}
+                  {resource.type === 'Libro' && (
+                    <svg className="w-10 h-10 text-charcoal/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+                  )}
+                  {resource.type === 'Documental' && (
+                    <svg className="w-10 h-10 text-stone/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10l4.553-2.069A1 1 0 0121 8.87v6.26a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                  )}
+                  {resource.type === 'Curso' && (
+                    <svg className="w-10 h-10 text-gold/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 14l9-5-9-5-9 5 9 5z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" /></svg>
+                  )}
                 </div>
                 <div className="p-6">
                   <span className="px-3 py-1 bg-cream text-gold text-xs font-medium rounded-full border border-gold/10">
                     {resource.type}
                   </span>
-                  <span className="px-3 py-1 bg-rosewood/10 text-rosewood text-xs font-medium rounded-full ml-2">
-                    Recomendado por Belong
-                  </span>
                   <h4 className="font-serif text-charcoal mt-3 mb-1">{resource.title}</h4>
-                  <p className="text-sm text-stone/60 mb-2">{resource.author}</p>
+                  <p className="text-xs text-stone/50 mb-2 italic">{resource.author}</p>
                   <p className="text-stone text-sm leading-relaxed mb-4">{resource.desc}</p>
-                  <a
-                    href={resource.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gold text-sm font-medium hover:text-dark-gold transition-colors flex items-center gap-2"
-                  >
-                    Acceder <span>→</span>
-                  </a>
+                  {resource.download ? (
+                    <a
+                      href={resource.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      download
+                      className="inline-flex items-center gap-2 text-gold text-sm font-medium hover:text-dark-gold transition-colors"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                      Descargar PDF
+                    </a>
+                  ) : (
+                    <a
+                      href={resource.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gold text-sm font-medium hover:text-dark-gold transition-colors flex items-center gap-2"
+                    >
+                      {resource.type === 'Curso' ? 'Acceder al curso' : resource.type === 'Libro' ? 'Ver libro' : 'Ver'} <span>→</span>
+                    </a>
+                  )}
                 </div>
               </motion.div>
             ))}
