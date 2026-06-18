@@ -158,7 +158,7 @@ export default function ImpactoSection() {
           >
             <p className="text-gold text-sm font-medium tracking-[0.3em] uppercase mb-4">Programa Raíces</p>
             <h2 className="text-4xl md:text-6xl font-serif font-medium text-charcoal leading-tight mb-6">
-              Causa <span className="text-rosewood italic">bandera</span> de Fundación Belong
+              Programa Raíces de <span className="text-rosewood italic">Fundación Belong</span>
             </h2>
             <p className="text-xl text-stone font-light max-w-3xl mx-auto">
               Sembramos confianza en la infancia para cosechar liderazgo en el futuro
@@ -167,9 +167,9 @@ export default function ImpactoSection() {
 
           <div className="mb-16">
             <p className="text-lg text-stone leading-relaxed max-w-4xl mx-auto text-center mb-16">
-              Programa Raíces es la causa bandera de Fundación Belong. Acompañamos a niñas, familias y educadores 
-              a construir una formación donde la identidad de una niña se define por su curiosidad, su talento y sus sueños — 
-              no por mandatos que limitan lo que puede llegar a ser.
+              El programa Raíces de la Fundación Belong acompaña a niñas, familias y educadores para construir una formación
+              donde la identidad de una niña se define por su curiosidad, su talento y sus sueños y no por mandatos
+              que limitan lo que puede llegar a ser.
             </p>
 
             <div className="grid md:grid-cols-3 gap-8">
