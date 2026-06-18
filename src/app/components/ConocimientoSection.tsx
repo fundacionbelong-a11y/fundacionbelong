@@ -38,7 +38,7 @@ const resources = [
     type: 'Estudio', title: 'Brecha de género en Colombia',
     author: 'DANE / ONU Mujeres — 3ª edición, noviembre 2024',
     desc: 'Análisis integral sobre la desigualdad entre mujeres y hombres en Colombia: empleo, trabajo doméstico, participación política y violencia.',
-    url: 'https://www.dane.gov.co/files/investigaciones/genero/publicaciones/mujeres-y-hombre-brechas-de-genero-colombia-informe.pdf', download: true,
+    url: '/brecha-de-genero-colombia.pdf', download: true,
   },
   {
     type: 'Estudio', title: 'Women in the Workplace 2025',
