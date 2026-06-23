@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useSession, signOut } from 'next-auth/react';
 
 const navItems = [
   { label: 'Inicio', href: '/' },
@@ -16,6 +17,7 @@ const navItems = [
 export default function Layout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { data: session } = useSession();
 
   const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith('#')) {
@@ -78,13 +80,38 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               ))}
             </div>
 
-            <div className="hidden md:block">
-              <Link 
-                href="/contacto"
-                className="px-5 py-2.5 bg-white/10 hover:bg-gold text-white hover:text-charcoal text-sm font-medium rounded-full transition-all duration-300"
-              >
-                Contacto
-              </Link>
+            <div className="hidden md:flex items-center gap-3">
+              {session ? (
+                <>
+                  <Link
+                    href="/members"
+                    className="px-4 py-2 text-white/70 hover:text-white text-sm font-medium transition-colors"
+                  >
+                    {session.user?.name?.split(' ')[0] ?? 'Mi cuenta'}
+                  </Link>
+                  <button
+                    onClick={() => signOut({ callbackUrl: '/' })}
+                    className="px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white text-sm font-medium rounded-full transition-all duration-300"
+                  >
+                    Salir
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link
+                    href="/entrar"
+                    className="px-5 py-2.5 text-white/70 hover:text-white text-sm font-medium transition-colors"
+                  >
+                    Ingresar
+                  </Link>
+                  <Link
+                    href="/entrar?tab=registro"
+                    className="px-5 py-2.5 bg-gold hover:bg-gold/90 text-white text-sm font-medium rounded-full transition-all duration-300"
+                  >
+                    Unirse
+                  </Link>
+                </>
+              )}
             </div>
 
             {/* Mobile: horizontal scrollable links */}
