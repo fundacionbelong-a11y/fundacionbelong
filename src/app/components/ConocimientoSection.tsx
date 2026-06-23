@@ -1,9 +1,23 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 // === LO QUE REALMENTE EXISTE ===
+
+// Blog posts
+const blogPosts = [
+  {
+    slug: 'ladies-first',
+    title: 'Ladies First: el espejo que no miente',
+    subtitle: 'y el reto de imaginar lo que aún no hemos construido',
+    excerpt: 'Esta película deja un mensaje contundente a través de la poderosa comedia. El humor como herramienta para mostrar lo que es habitar en un mundo que no fue diseñado para ti.',
+    tags: ['Análisis de cine', 'Equidad de género'],
+    authors: 'Pamela López Zúñiga · Martha Lucía Cano',
+    href: '/conocimiento/blog/ladies-first',
+  },
+];
 
 // Podcast: solo 1 episodio en Spotify
 const podcastEpisode = {
@@ -29,9 +43,9 @@ const glossary = [
 const resources = [
   // ARTÍCULOS
   {
-    type: 'Artículo', title: 'Ladies First', author: 'Fundación Belong',
-    desc: 'Nuestro artículo sobre liderazgo femenino e inclusión en Colombia.',
-    url: '/ladies-first-belong.pdf', download: true,
+    type: 'Artículo', title: 'Ladies First', author: 'Pamela López Zúñiga · Martha Lucía Cano',
+    desc: 'Análisis de la película: el humor como espejo de la desigualdad de género y el reto de imaginar un mundo distinto.',
+    url: '/conocimiento/blog/ladies-first', download: false,
   },
   // ESTUDIOS
   {
@@ -125,6 +139,60 @@ export default function ConocimientoSection() {
       </div>
 
       <div className="max-w-6xl mx-auto px-6 py-24 md:py-40">
+
+        {/* === BLOG === */}
+        <motion.div
+          initial={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="mb-24"
+        >
+          <p className="text-gold text-sm font-medium tracking-[0.3em] uppercase mb-4">Blog</p>
+          <h3 className="text-3xl md:text-4xl font-serif font-medium text-charcoal mb-4">
+            Perspectivas de <span className="text-rosewood italic">Belong</span>
+          </h3>
+          <p className="text-stone mb-10 max-w-2xl">
+            Análisis, reflexiones y puntos de vista sobre género, cultura y transformación.
+          </p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {blogPosts.map((post, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.6 }}
+                className="group card-lift bg-white rounded-2xl border border-gold/10 overflow-hidden flex flex-col"
+              >
+                {/* Color header */}
+                <div className="h-2 bg-gradient-to-r from-rosewood/60 to-gold/60" />
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {post.tags.map((tag, j) => (
+                      <span key={j} className="px-3 py-1 bg-cream text-stone text-xs font-medium rounded-full border border-gold/10">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <h4 className="font-serif text-charcoal text-xl mb-1 leading-snug">{post.title}</h4>
+                  <p className="text-xs text-rosewood/80 italic mb-3">{post.subtitle}</p>
+                  <p className="text-stone text-sm leading-relaxed mb-4 flex-1">{post.excerpt}</p>
+                  <div className="pt-4 border-t border-gold/10 flex items-center justify-between">
+                    <p className="text-xs text-stone/50">{post.authors}</p>
+                    <Link
+                      href={post.href}
+                      className="inline-flex items-center gap-1 text-gold text-sm font-medium hover:text-dark-gold transition-colors"
+                    >
+                      Leer <span>→</span>
+                    </Link>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
 
         {/* === PODCAST — 1 EPISODIO REAL === */}
         <motion.div
@@ -249,6 +317,13 @@ export default function ConocimientoSection() {
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
                       Descargar PDF
                     </a>
+                  ) : resource.url.startsWith('/conocimiento') ? (
+                    <Link
+                      href={resource.url}
+                      className="text-gold text-sm font-medium hover:text-dark-gold transition-colors flex items-center gap-2"
+                    >
+                      Leer artículo <span>→</span>
+                    </Link>
                   ) : (
                     <a
                       href={resource.url}

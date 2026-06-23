@@ -36,6 +36,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.fundacionbelong.co/conocimiento/blog/ladies-first/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.fundacionbelong.co/impacto/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
