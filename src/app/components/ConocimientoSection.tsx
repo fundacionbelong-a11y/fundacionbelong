@@ -49,9 +49,9 @@ const resources = [
   },
   // ESTUDIOS
   {
-    type: 'Estudio', title: 'Brecha de género en Colombia',
-    author: 'DANE / ONU Mujeres — 3ª edición, noviembre 2024',
-    desc: 'Análisis integral sobre la desigualdad entre mujeres y hombres en Colombia: empleo, trabajo doméstico, participación política y violencia.',
+    type: 'Estudio', title: 'Explorando las brechas de género en Colombia',
+    author: 'María Teresa Ramírez-Giraldo (coord.) — Banco de la República, ESPE núm. 111, marzo 2026',
+    desc: 'Estudio del Banco de la República sobre la economía de género en Colombia: discriminación laboral, diferenciales salariales y las brechas entre mujeres y hombres en el mercado de trabajo.',
     url: '/brecha-de-genero-colombia.pdf', download: true,
   },
   {
