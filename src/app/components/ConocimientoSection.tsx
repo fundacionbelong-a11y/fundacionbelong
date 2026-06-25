@@ -109,7 +109,15 @@ const resources = [
   },
 ];
 
-const filters = ['Todos', 'Artículo', 'Estudio', 'Libro', 'Documental', 'Curso'];
+// label (plural, visible) → type (singular, matches resource.type)
+const filters = [
+  { label: 'Todos', type: 'Todos' },
+  { label: 'Artículos', type: 'Artículo' },
+  { label: 'Estudios', type: 'Estudio' },
+  { label: 'Libros', type: 'Libro' },
+  { label: 'Documentales', type: 'Documental' },
+  { label: 'Cursos', type: 'Curso' },
+];
 
 export default function ConocimientoSection() {
   const [activeFilter, setActiveFilter] = useState('Todos');
@@ -253,15 +261,15 @@ export default function ConocimientoSection() {
           <div className="flex flex-wrap gap-2 mb-8">
             {filters.map(f => (
               <button
-                key={f}
-                onClick={() => setActiveFilter(f)}
+                key={f.type}
+                onClick={() => setActiveFilter(f.type)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                  activeFilter === f
+                  activeFilter === f.type
                     ? 'bg-charcoal text-white'
                     : 'bg-cream text-stone hover:bg-gold/10'
                 }`}
               >
-                {f}
+                {f.label}
               </button>
             ))}
           </div>
