@@ -1,6 +1,7 @@
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 import Link from "next/link";
+import pool from "@/lib/db";
 import Layout from "../components/Layout";
 
 export const metadata = {
@@ -49,7 +50,12 @@ const comingSoon = [
 
 export default async function MembersPage() {
   const session = await auth();
-  if (!session) redirect("/entrar");
+  if (!session?.user?.id) redirect("/entrar");
+
+  const roleRes = await pool.query("SELECT role FROM users WHERE id = $1", [
+    session.user.id,
+  ]);
+  const isAdmin = roleRes.rows[0]?.role === "admin";
 
   const firstName = session.user?.name?.split(" ")[0] ?? "bienvenida/o";
 
@@ -67,6 +73,17 @@ export default async function MembersPage() {
             <p className="text-white/60 text-lg font-light max-w-xl">
               Eres parte de la comunidad Belong. Estamos construyendo este espacio para ti.
             </p>
+            {isAdmin && (
+              <Link
+                href="/members/admin"
+                className="inline-flex items-center gap-2 mt-6 px-5 py-2.5 bg-gold text-white text-sm font-medium rounded-full hover:bg-gold/90 transition-colors"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Ver registrados
+              </Link>
+            )}
           </div>
         </div>
 
