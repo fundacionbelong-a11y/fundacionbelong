@@ -16,11 +16,12 @@ export const dynamic = "force-dynamic";
 
 export default async function AdminPage() {
   const session = await auth();
-  if (!session?.user?.id) redirect("/entrar");
+  if (!session?.user?.email) redirect("/entrar");
 
-  // Role gate: only admins may see this page.
-  const roleRes = await pool.query("SELECT role FROM users WHERE id = $1", [
-    session.user.id,
+  // Role gate: only admins may see this page. Look up by email (always
+  // present in the session) rather than id, which may be absent from the JWT.
+  const roleRes = await pool.query("SELECT role FROM users WHERE email = $1", [
+    session.user.email,
   ]);
   const role = roleRes.rows[0]?.role;
   if (role !== "admin") redirect("/members");

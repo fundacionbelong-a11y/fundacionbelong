@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import pool from "@/lib/db";
+import { sendContactNotification } from "@/lib/email";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -35,6 +36,9 @@ export async function POST(req: Request) {
      VALUES ($1, $2, $3, $4, $5)`,
     [name.slice(0, 200), email.slice(0, 200), subject.slice(0, 300) || null, message, source]
   );
+
+  // Notify by email (no-op if Resend isn't configured; never blocks the response).
+  await sendContactNotification({ name, email, subject, message, source });
 
   return NextResponse.json({ success: true });
 }

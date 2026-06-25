@@ -50,10 +50,10 @@ const comingSoon = [
 
 export default async function MembersPage() {
   const session = await auth();
-  if (!session?.user?.id) redirect("/entrar");
+  if (!session?.user?.email) redirect("/entrar");
 
-  const roleRes = await pool.query("SELECT role FROM users WHERE id = $1", [
-    session.user.id,
+  const roleRes = await pool.query("SELECT role FROM users WHERE email = $1", [
+    session.user.email,
   ]);
   const isAdmin = roleRes.rows[0]?.role === "admin";
 
