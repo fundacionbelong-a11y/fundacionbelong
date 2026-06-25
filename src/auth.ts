@@ -1,18 +1,16 @@
 import NextAuth from "next-auth";
-import Google from "next-auth/providers/google";
 import Credentials from "next-auth/providers/credentials";
 import PostgresAdapter from "@auth/pg-adapter";
 import bcrypt from "bcryptjs";
 import pool from "@/lib/db";
+import authConfig from "@/auth.config";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
+  ...authConfig,
   adapter: PostgresAdapter(pool),
   session: { strategy: "jwt" },
   providers: [
-    Google({
-      clientId: process.env.AUTH_GOOGLE_ID!,
-      clientSecret: process.env.AUTH_GOOGLE_SECRET!,
-    }),
+    ...authConfig.providers,
     // Facebook — add AUTH_FACEBOOK_ID + AUTH_FACEBOOK_SECRET to enable
     // Apple   — add AUTH_APPLE_ID + AUTH_APPLE_SECRET to enable
     Credentials({
@@ -40,18 +38,4 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       },
     }),
   ],
-  pages: {
-    signIn: "/entrar",
-    error: "/entrar",
-  },
-  callbacks: {
-    async jwt({ token, user }) {
-      if (user) token.id = user.id;
-      return token;
-    },
-    async session({ session, token }) {
-      if (token?.id) session.user.id = token.id as string;
-      return session;
-    },
-  },
 });

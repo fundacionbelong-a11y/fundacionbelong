@@ -1,5 +1,10 @@
-import { auth } from "@/auth";
+import NextAuth from "next-auth";
 import { NextResponse } from "next/server";
+import authConfig from "@/auth.config";
+
+// Lightweight Edge-runtime instance — uses only the edge-safe config
+// (no pg adapter, no bcrypt). Just reads the JWT to gate /members.
+const { auth } = NextAuth(authConfig);
 
 export default auth((req) => {
   if (!req.auth) {
