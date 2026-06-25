@@ -14,7 +14,12 @@ CREATE TABLE IF NOT EXISTS users (
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
+-- NOTE: @auth/pg-adapter's linkAccount runs `INSERT ... RETURNING id`,
+-- so the accounts table MUST have an `id` column. Missing it makes
+-- OAuth (Google) sign-in create the user but fail to link the account,
+-- leaving an orphaned user that triggers OAuthAccountNotLinked on retry.
 CREATE TABLE IF NOT EXISTS accounts (
+  id SERIAL,
   "userId" UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   type TEXT NOT NULL,
   provider TEXT NOT NULL,
