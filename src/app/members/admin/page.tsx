@@ -3,7 +3,8 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import pool from "@/lib/db";
 import Layout from "../../components/Layout";
-import AdminUsersClient, { type AdminUser } from "../../components/AdminUsersClient";
+import { type AdminUser } from "../../components/AdminUsersClient";
+import AdminDashboard, { type ContactMessage, type Subscriber } from "../../components/AdminDashboard";
 
 export const metadata = {
   title: "Administración — Fundación Belong",
@@ -24,19 +25,35 @@ export default async function AdminPage() {
   const role = roleRes.rows[0]?.role;
   if (role !== "admin") redirect("/members");
 
-  // Fetch all registered users.
-  const result = await pool.query(`
-    SELECT u.name, u.email, u.role,
-           CASE WHEN u.password IS NOT NULL THEN 'correo' ELSE 'social' END AS metodo,
-           COALESCE(string_agg(a.provider, ', '), '') AS providers,
-           to_char(u.created_at, 'YYYY-MM-DD HH24:MI') AS registrado
-    FROM users u
-    LEFT JOIN accounts a ON a."userId" = u.id
-    GROUP BY u.id
-    ORDER BY u.created_at DESC
-  `);
+  // Fetch users, contact messages and newsletter subscribers in parallel.
+  const [usersRes, messagesRes, subsRes] = await Promise.all([
+    pool.query(`
+      SELECT u.name, u.email, u.role,
+             CASE WHEN u.password IS NOT NULL THEN 'correo' ELSE 'social' END AS metodo,
+             COALESCE(string_agg(a.provider, ', '), '') AS providers,
+             to_char(u.created_at, 'YYYY-MM-DD HH24:MI') AS registrado
+      FROM users u
+      LEFT JOIN accounts a ON a."userId" = u.id
+      GROUP BY u.id
+      ORDER BY u.created_at DESC
+    `),
+    pool.query(`
+      SELECT id, name, email, subject, message, source,
+             to_char(created_at, 'YYYY-MM-DD HH24:MI') AS created_at
+      FROM contact_messages
+      ORDER BY created_at DESC
+    `),
+    pool.query(`
+      SELECT id, email, source,
+             to_char(created_at, 'YYYY-MM-DD HH24:MI') AS created_at
+      FROM newsletter_subscribers
+      ORDER BY created_at DESC
+    `),
+  ]);
 
-  const users: AdminUser[] = result.rows;
+  const users: AdminUser[] = usersRes.rows;
+  const messages: ContactMessage[] = messagesRes.rows;
+  const subscribers: Subscriber[] = subsRes.rows;
 
   return (
     <Layout>
@@ -60,10 +77,10 @@ export default async function AdminPage() {
             Comunidad <span className="text-rosewood italic">Belong</span>
           </h1>
           <p className="text-stone/60 mb-10">
-            Personas registradas en el sitio. Solo tú puedes ver esta página.
+            Usuarios, mensajes de contacto y suscriptores. Solo tú puedes ver esta página.
           </p>
 
-          <AdminUsersClient users={users} />
+          <AdminDashboard users={users} messages={messages} subscribers={subscribers} />
         </div>
       </div>
     </Layout>

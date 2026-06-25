@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import NewsletterForm from './NewsletterForm';
 
 const spaces = [
   { img: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=400&fit=crop&auto=format&q=80', title: 'Género y Sociedad', desc: 'Debates sobre brechas de género, políticas públicas, noticias y tendencias que nos afectan a tod@s.' },
@@ -228,20 +229,10 @@ export default function ComunidadSection() {
             una voz de la comunidad y las próximas actividades. Sin spam. Solo lo que importa.
           </p>
           <div className="max-w-md mx-auto p-6 bg-white rounded-2xl border border-gold/10">
-            <p className="text-gold text-sm font-medium mb-2">🚧 Próximamente</p>
             <p className="text-xs text-stone/70 mb-4">
               Estamos preparando el newsletter. Déjanos tu correo y serás de las primeras en recibirlo.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <input
-                type="email"
-                placeholder="Tu correo electrónico"
-                className="px-5 py-3 rounded-full border border-gold/20 focus:outline-none focus:border-gold bg-white text-sm flex-1"
-              />
-              <button className="px-6 py-3 bg-charcoal text-white rounded-full text-sm font-medium hover:bg-rosewood transition-colors" onClick={() => window.location.href='mailto:fundacionbelong@gmail.com?subject=Suscribirme%20al%20newsletter%20Belong'}>
-                Notifícame
-              </button>
-            </div>
+            <NewsletterForm source="comunidad" variant="light" />
           </div>
         </motion.div>
       </div>

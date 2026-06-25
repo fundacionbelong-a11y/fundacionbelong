@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import ContactForm from './ContactForm';
+import NewsletterForm from './NewsletterForm';
 
 export default function ContactSection() {
   return (
@@ -19,14 +21,14 @@ export default function ContactSection() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
-          {/* Contacto directo */}
-          <div className="bg-cream rounded-2xl p-8 md:p-10 border border-gold/10">
-            <h3 className="text-xl font-serif text-charcoal mb-6">Escríbenos</h3>
-            <p className="text-stone text-sm leading-relaxed mb-8">
-              Responderemos lo antes posible. También puedes contactarnos directamente por correo, teléfono o redes sociales.
-            </p>
+          {/* Formulario de contacto — guarda en la base de datos */}
+          <ContactForm source="contacto" />
 
-            <div className="space-y-5">
+          {/* Métodos de contacto directo + info */}
+          <div className="space-y-8">
+            <div>
+            <h3 className="text-xl font-serif text-charcoal mb-4">O contáctanos directamente</h3>
+            <div className="space-y-4">
               <a
                 href="mailto:fundacionbelong@gmail.com"
                 className="flex items-center gap-4 p-4 bg-white rounded-xl border border-gold/10 hover:border-gold/30 transition-all"
@@ -91,10 +93,8 @@ export default function ContactSection() {
                 </div>
               </a>
             </div>
-          </div>
+            </div>
 
-          {/* Info adicional */}
-          <div className="space-y-8">
             <div className="bg-pale-rosewood rounded-2xl p-8">
               <h3 className="text-xl font-serif text-charcoal mb-4">
                 ¿En qué podemos <span className="text-rosewood italic">ayudarte</span>?
@@ -130,9 +130,7 @@ export default function ContactSection() {
               <p className="text-white/60 text-sm mb-6 leading-relaxed">
                 Una vez al mes: el dato de género que debes conocer, un recurso educativo, una voz de la comunidad y las próximas actividades. Sin spam.
               </p>
-              <p className="text-xs text-white/40">
-                Próximamente. Por ahora, síguenos en redes para estar al día.
-              </p>
+              <NewsletterForm source="contacto-footer" variant="dark" />
             </div>
           </div>
         </div>
