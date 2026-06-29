@@ -97,19 +97,6 @@ External PDFs served by their official sources (direct download URLs):
 
 `layout.tsx` exports full `Metadata` with `metadataBase`, OG, Twitter Card, JSON-LD NGO schema. Every public subpage exports its own `metadata` with `title` and `canonical`. The blog post also emits an `Article` JSON-LD schema. `public/robots.txt` and `public/sitemap.xml` cover the public routes (incl. the blog post). `/members*` pages set `robots: { index: false }` — keep auth-gated pages out of the index.
 
-## Known bugs to fix (code-review 2026-06-28)
-
-These were caught by `/code-review` and are not yet patched — fix them before adding new features on top of the affected files:
-
-1. **`src/app/api/auth/register/route.ts:6`** — `req.json()` has no `try/catch`. A non-JSON body returns 500 instead of 400. Wrap it the same way `contact/route.ts` and `newsletter/route.ts` do.
-2. **`src/app/entrar/page.tsx`** — Open redirect. `callbackUrl` is taken from the query string and passed directly to `router.push(callbackUrl)` after credential login (line ~48) and after registration (line ~85). Auth.js validates it for the Google OAuth path but NOT for the credentials/register path. Fix: check that the value starts with `/` (relative path) before using it — `const safe = callbackUrl?.startsWith('/') ? callbackUrl : '/members';`.
-3. **`src/app/api/auth/register/route.ts:15`** — TOCTOU race: SELECT then INSERT with no error handling on the INSERT. Two concurrent registrations with the same email both pass the SELECT check; the second INSERT hits the `email UNIQUE` constraint and throws PostgreSQL error 23505 as an unhandled 500. Catch code `'23505'` on the INSERT and return 409, or use `INSERT … ON CONFLICT (email) DO NOTHING`.
-4. **`src/app/api/auth/register/route.ts:8`** — No email format validation. `contact/route.ts` and `newsletter/route.ts` both use `EMAIL_RE`; register should too.
-5. **`src/app/components/AdminDashboard.tsx:243` · `AdminUsersClient.tsx:443`** — CSV download anchor is never appended to the DOM before `.click()`. Firefox silently drops the download. Fix: `document.body.appendChild(a); a.click(); document.body.removeChild(a);`.
-6. **`src/app/components/AdminUsersClient.tsx:437`** — `String(s)` in the CSV escape function converts `null` to the literal string `"null"`. AdminDashboard uses `String(s ?? '')` (correct). Change to match.
-7. **`src/app/components/NewsletterForm.tsx:788,814`** — Two dead ternaries: both branches are identical so the `variant` prop has no effect on success/error text color. Remove the ternary and use the class directly.
-8. **`src/app/components/AdminDashboard.tsx` · `AdminUsersClient.tsx`** — Export-CSV SVG icons use `strokeWidth={2}`; the design convention (CLAUDE.md "Design conventions") requires `strokeWidth={1.5}`.
-
 ## Change log protocol
 
 Both Claude and Alfred log changes to the memory file at:

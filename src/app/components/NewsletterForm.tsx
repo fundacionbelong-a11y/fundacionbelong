@@ -46,7 +46,7 @@ export default function NewsletterForm({
 
   if (status === 'sent') {
     return (
-      <p className={variant === 'dark' ? 'text-gold text-sm font-medium' : 'text-gold text-sm font-medium'}>
+      <p className="text-gold text-sm font-medium">
         ✓ ¡Listo! Te avisaremos cuando lancemos el newsletter.
       </p>
     );
@@ -72,7 +72,7 @@ export default function NewsletterForm({
         </button>
       </div>
       {error && (
-        <p className={`text-sm mt-2 ${variant === 'dark' ? 'text-rosewood' : 'text-rosewood'}`}>{error}</p>
+        <p className="text-sm mt-2 text-rosewood">{error}</p>
       )}
     </form>
   );

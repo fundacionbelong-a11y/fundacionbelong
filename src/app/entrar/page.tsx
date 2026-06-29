@@ -8,7 +8,8 @@ import Link from 'next/link';
 function EntrarForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get('callbackUrl') ?? '/members';
+  const raw = searchParams.get('callbackUrl') ?? '';
+  const callbackUrl = raw.startsWith('/') ? raw : '/members';
   const initialTab = searchParams.get('tab') === 'registro' ? 'registro' : 'ingresar';
 
   const [tab, setTab] = useState<'ingresar' | 'registro'>(initialTab);
