@@ -37,7 +37,7 @@ src/app/
 
 **Active pages:** `/` `/nosotros` `/servicios` `/contacto` `/pamela` `/charlas` `/comunidad` `/conocimiento` `/conocimiento/blog/ladies-first` `/impacto` `/entrar` (login/registro) `/members` (zona privada) `/members/admin` (panel solo-admin)
 
-**API routes** (`src/app/api/`): `auth/[...nextauth]` · `auth/register` · `contact` · `newsletter`. Keep them thin; DB access via `@/lib/db` (a shared `pg` Pool).
+**API routes** (`src/app/api/`): `auth/[...nextauth]` · `auth/register` · `contact` · `newsletter`. Keep them thin; DB access via `@/lib/db` (a shared `pg` Pool). All POST routes follow the same guard pattern: (1) `try { body = await req.json() } catch { return 400 }`, (2) `EMAIL_RE` check on any email field, (3) truthy check on required fields. The `register` route additionally wraps its INSERT in try/catch and converts pg error code `23505` (unique_violation) to a 409 instead of letting it propagate as a 500.
 
 **The only nav that matters: `Layout.tsx`.** All 9 pages import it. The nav items are `/conocimiento /charlas /servicios /comunidad /impacto` + "Contacto" button → `/contacto`.
 
@@ -63,6 +63,7 @@ src/app/
 
 **Auth.js v5** (`next-auth@beta`) with two providers: Google OAuth + Credentials (email/password, bcrypt). Sessions are **JWT** (`strategy: "jwt"`).
 
+- **`callbackUrl` must always be sanitized before use in `router.push()`.** Auth.js validates it for the Google OAuth path, but NOT for credentials login or registration. In `entrar/page.tsx` the value is restricted to relative paths: `const callbackUrl = raw.startsWith('/') ? raw : '/members'`. Never pass a raw query-param value directly to `router.push()` — it enables open redirects.
 - **Split config is mandatory.** `src/auth.config.ts` is edge-safe (Google + callbacks + `trustHost: true`, NO `pg`/`bcrypt`) and is what `src/middleware.ts` imports. `src/auth.ts` extends it with `PostgresAdapter` + the Credentials provider (bcrypt). **If you import `pg`/`bcrypt` into middleware, the Vercel deploy fails** with `node:util/types unsupported in Edge`.
 - **`AUTH_URL=https://www.fundacionbelong.co` is critical.** The site has 3 domains (.co/.org/.com); without a pinned `AUTH_URL`, OAuth from .org/.com builds a redirect_uri Google doesn't recognize → `redirect_uri_mismatch`. Keep it set.
 - **Admin role checks query by `email`, not `session.user.id`** — the JWT doesn't reliably carry `id` for Google sign-ins. `/members` and `/members/admin` both do `SELECT role FROM users WHERE email = $1`.
@@ -75,6 +76,8 @@ src/app/
 - `NewsletterForm.tsx` (variants `dark`/`light`) → `POST /api/newsletter` → `newsletter_subscribers` (idempotent via `ON CONFLICT DO NOTHING`). Used in `ContactSection` and `ComunidadSection`.
 - Each row records a `source` string (which form/page it came from).
 - **Email notifications:** `src/lib/email.ts` sends a Resend notification to `fundacionbelong@gmail.com` on each contact submit. It's a **safe no-op without `RESEND_API_KEY`** and never throws — the DB write is the source of truth. Default sender `onboarding@resend.dev` (only delivers to the Resend account owner until a domain is verified).
+
+**CSV export pattern** (`AdminDashboard.tsx`, `AdminUsersClient.tsx`): always `document.body.appendChild(a)` before `a.click()` and `document.body.removeChild(a)` after — Firefox silently drops downloads from detached anchors. Use `String(s ?? '')` (not `String(s)`) in the CSV escape function so null fields become empty cells rather than the literal string `"null"`.
 
 **`/members/admin`** is a server component (`force-dynamic`) that fetches users + messages + subscribers and renders `AdminDashboard.tsx` (tabs: Usuarios · Mensajes · Suscriptores, each with search/CSV export). `AdminUsersClient.tsx` is the users table.
 
