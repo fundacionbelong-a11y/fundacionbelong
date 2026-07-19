@@ -12,6 +12,7 @@ const navItems = [
   { label: 'Servicios', href: '/servicios' },
   { label: 'Comunidad', href: '/comunidad' },
   { label: 'Impacto', href: '/impacto' },
+  { label: 'Bicicleta', href: '/bicicleta' },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
