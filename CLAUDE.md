@@ -104,3 +104,5 @@ External PDFs served by their official sources (direct download URLs):
 
 Both Claude and Alfred log changes to the memory file at:
 `~/.claude/projects/-Users-santiagonoriegaardila-Projects-mission-control/memory/project_belong.md`
+
+The canonical local workspace for this project is **`~/.hermes/workspace/belong-coming-soon/`** (migrated from `~/.openclaw/workspace/` on 2026-07-18). Both copies point to the same GitHub remote; always work from the hermes path.
