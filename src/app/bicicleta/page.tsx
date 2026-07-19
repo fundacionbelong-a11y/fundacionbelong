@@ -10,12 +10,8 @@ export default function BicicletaPage() {
             Espacio en construcción para pedalear juntos hacia la pertenencia.
           </p>
 
-          <div className="relative aspect-[4/3] w-full max-w-2xl mx-auto rounded-2xl overflow-hidden bg-charcoal/5 border border-charcoal/10 shadow-sm">
-            <img
-              src="https://images.unsplash.com/photo-1485965120184-e224f7a1feca?w=800&auto=format&fit=crop"
-              alt="Bicicleta placeholder"
-              className="w-full h-full object-cover"
-            />
+          <div className="relative aspect-[4/3] w-full max-w-2xl mx-auto rounded-2xl overflow-hidden bg-charcoal/5 border border-charcoal/10 shadow-sm flex items-center justify-center">
+            <div className="text-charcoal/30 text-8xl">🚲</div>
           </div>
         </div>
       </section>
