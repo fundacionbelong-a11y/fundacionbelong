@@ -1,52 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.fundacionbelong.co/</loc>
+    <loc>https://www.fundacionbelong.org/</loc>
+    <lastmod>2025-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.fundacionbelong.co/nosotros/</loc>
+    <loc>https://www.fundacionbelong.org/nosotros/</loc>
+    <lastmod>2025-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.fundacionbelong.co/servicios/</loc>
+    <loc>https://www.fundacionbelong.org/servicios/</loc>
+    <lastmod>2025-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.fundacionbelong.co/pamela/</loc>
+    <loc>https://www.fundacionbelong.org/pamela/</loc>
+    <lastmod>2025-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.fundacionbelong.co/charlas/</loc>
+    <loc>https://www.fundacionbelong.org/charlas/</loc>
+    <lastmod>2025-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.fundacionbelong.co/comunidad/</loc>
+    <loc>https://www.fundacionbelong.org/comunidad/</loc>
+    <lastmod>2025-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.fundacionbelong.co/conocimiento/</loc>
+    <loc>https://www.fundacionbelong.org/conocimiento/</loc>
+    <lastmod>2025-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.fundacionbelong.co/conocimiento/blog/ladies-first/</loc>
+    <loc>https://www.fundacionbelong.org/conocimiento/blog/ladies-first/</loc>
+    <lastmod>2025-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.fundacionbelong.co/impacto/</loc>
+    <loc>https://www.fundacionbelong.org/impacto/</loc>
+    <lastmod>2025-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.fundacionbelong.co/contacto/</loc>
+    <loc>https://www.fundacionbelong.org/contacto/</loc>
+    <lastmod>2025-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

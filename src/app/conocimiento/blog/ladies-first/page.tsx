@@ -1,47 +1,88 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Script from 'next/script';
 import Layout from '../../../components/Layout';
+
+const articleUrl = 'https://www.fundacionbelong.org/conocimiento/blog/ladies-first/';
+const ogImageUrl = 'https://www.fundacionbelong.org/ladies-first-og.png';
+const publishedTime = '2025-07-15T00:00:00-05:00';
+const dateModified = publishedTime;
 
 export const metadata: Metadata = {
   title: 'Ladies First: el espejo que no miente — Fundación Belong',
   description: 'Análisis de la película Ladies First por Pamela López Zúñiga y Martha Lucía Cano. El humor como espejo de la desigualdad de género y el reto de imaginar un mundo que aún no hemos construido.',
   keywords: ['Ladies First', 'equidad de género', 'análisis de cine', 'Pamela López', 'Fundación Belong', 'feminismo', 'Colombia'],
-  alternates: { canonical: 'https://www.fundacionbelong.co/conocimiento/blog/ladies-first/' },
+  alternates: { canonical: articleUrl },
   openGraph: {
     title: 'Ladies First: el espejo que no miente',
     description: 'El humor como herramienta para mostrar lo que es habitar en un mundo que no fue diseñado para ti.',
     type: 'article',
     locale: 'es_CO',
-    publishedTime: '2024-01-01T00:00:00Z',
+    url: articleUrl,
+    publishedTime,
+    modifiedTime: dateModified,
     authors: ['Pamela López Zúñiga', 'Martha Lucía Cano'],
+    tags: ['Ladies First', 'equidad de género', 'análisis de cine', 'feminismo', 'Colombia', 'Fundación Belong'],
+    images: [
+      {
+        url: '/ladies-first-og.png',
+        width: 1200,
+        height: 463,
+        alt: 'Ladies First: el espejo que no miente — Fundación Belong',
+      },
+    ],
+  },
+  other: {
+    'article:tag': ['Ladies First', 'equidad de género', 'análisis de cine', 'feminismo', 'Colombia', 'Fundación Belong'],
   },
 };
 
-const jsonLd = {
+const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: 'Ladies First: el espejo que no miente y el reto de imaginar lo que aún no hemos construido',
   description: 'Análisis de la película Ladies First: el humor como espejo de la desigualdad de género.',
+  image: ogImageUrl,
   author: [
-    { '@type': 'Person', name: 'Pamela López Zúñiga', url: 'https://www.fundacionbelong.co/pamela/' },
+    { '@type': 'Person', name: 'Pamela López Zúñiga', url: 'https://www.fundacionbelong.org/pamela/' },
     { '@type': 'Person', name: 'Martha Lucía Cano' },
   ],
   publisher: {
     '@type': 'Organization',
     name: 'Fundación Belong',
-    url: 'https://www.fundacionbelong.co',
+    url: 'https://www.fundacionbelong.org',
+    logo: 'https://www.fundacionbelong.org/logo-belong.png',
   },
-  mainEntityOfPage: 'https://www.fundacionbelong.co/conocimiento/blog/ladies-first/',
+  datePublished: publishedTime,
+  dateModified: dateModified,
+  mainEntityOfPage: articleUrl,
   inLanguage: 'es',
   keywords: 'equidad de género, Ladies First, análisis de cine, liderazgo femenino, Colombia',
+};
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.fundacionbelong.org/' },
+    { '@type': 'ListItem', position: 2, name: 'Conocimiento', item: 'https://www.fundacionbelong.org/conocimiento/' },
+    { '@type': 'ListItem', position: 3, name: 'Blog', item: 'https://www.fundacionbelong.org/conocimiento/' },
+    { '@type': 'ListItem', position: 4, name: 'Ladies First', item: articleUrl },
+  ],
 };
 
 export default function LadiesFirstPage() {
   return (
     <Layout>
-      <script
+      <Script
+        id="article-jsonld"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <Script
+        id="breadcrumb-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       {/* Article header */}
@@ -51,13 +92,32 @@ export default function LadiesFirstPage() {
           {/* Back link */}
           <Link
             href="/conocimiento"
-            className="inline-flex items-center gap-2 text-sm text-stone/60 hover:text-gold transition-colors mb-10"
+            className="inline-flex items-center gap-2 text-sm text-stone/60 hover:text-gold transition-colors mb-6"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
             Volver a Conocimiento
           </Link>
+
+          {/* Breadcrumbs (visible + JSON-LD) */}
+          <nav aria-label="breadcrumb" className="mb-6">
+            <ol className="flex flex-wrap items-center gap-2 text-sm text-stone/60">
+              <li>
+                <Link href="/" className="hover:text-gold transition-colors">Inicio</Link>
+              </li>
+              <li aria-hidden="true">/</li>
+              <li>
+                <Link href="/conocimiento" className="hover:text-gold transition-colors">Conocimiento</Link>
+              </li>
+              <li aria-hidden="true">/</li>
+              <li>
+                <Link href="/conocimiento" className="hover:text-gold transition-colors">Blog</Link>
+              </li>
+              <li aria-hidden="true">/</li>
+              <li className="text-charcoal font-medium" aria-current="page">Ladies First</li>
+            </ol>
+          </nav>
 
           {/* Category tags */}
           <div className="flex flex-wrap gap-2 mb-6">
@@ -76,14 +136,21 @@ export default function LadiesFirstPage() {
           {/* Divider */}
           <div className="w-12 h-0.5 bg-gold mb-6" />
 
-          {/* Authors */}
-          <div className="flex items-center gap-3">
+          {/* Authors + date */}
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
             <div>
               <p className="text-sm font-medium text-charcoal tracking-widest uppercase">
                 Pamela López Zúñiga · Martha Lucía Cano
               </p>
               <p className="text-xs text-stone/50 mt-0.5">Fundación Belong</p>
             </div>
+            <div className="hidden sm:block w-px h-8 bg-gold/30" />
+            <p className="text-sm text-stone/60">
+              Publicado el{' '}
+              <time dateTime="2025-07-15" className="font-medium text-charcoal">
+                15 de julio de 2025
+              </time>
+            </p>
           </div>
         </div>
       </div>

@@ -15,7 +15,8 @@ const blogPosts = [
     excerpt: 'Esta película deja un mensaje contundente a través de la poderosa comedia. El humor como herramienta para mostrar lo que es habitar en un mundo que no fue diseñado para ti.',
     tags: ['Análisis de cine', 'Equidad de género'],
     authors: 'Pamela López Zúñiga · Martha Lucía Cano',
-    href: '/conocimiento/blog/ladies-first',
+    date: '15 julio 2025',
+    href: '/conocimiento/blog/ladies-first/',
   },
 ];
 
@@ -45,7 +46,7 @@ const resources = [
   {
     type: 'Artículo', title: 'Ladies First', author: 'Pamela López Zúñiga · Martha Lucía Cano',
     desc: 'Análisis de la película: el humor como espejo de la desigualdad de género y el reto de imaginar un mundo distinto.',
-    url: '/conocimiento/blog/ladies-first', download: false,
+    url: '/conocimiento/blog/ladies-first/', download: false,
   },
   // ESTUDIOS
   {
@@ -189,6 +190,9 @@ export default function ConocimientoSection() {
                   <p className="text-stone text-sm leading-relaxed mb-4 flex-1">{post.excerpt}</p>
                   <div className="pt-4 border-t border-gold/10 flex items-center justify-between">
                     <p className="text-xs text-stone/50">{post.authors}</p>
+                    <p className="text-xs text-stone/40">{post.date}</p>
+                  </div>
+                  <div className="mt-4">
                     <Link
                       href={post.href}
                       className="inline-flex items-center gap-1 text-gold text-sm font-medium hover:text-dark-gold transition-colors"

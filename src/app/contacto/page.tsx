@@ -5,7 +5,7 @@ import Layout from '../components/Layout';
 export const metadata: Metadata = {
   title: 'Contacto',
   description: 'Escríbenos para construir junt@s una cultura de pertenencia en tu organización, institución o comunidad. Fundación Belong — Bogotá, Colombia.',
-  alternates: { canonical: 'https://www.fundacionbelong.co/contacto/' },
+  alternates: { canonical: 'https://www.fundacionbelong.org/contacto/' },
 };
 
 export default function ContactoPage() {

@@ -5,7 +5,7 @@ import Layout from '../components/Layout';
 export const metadata: Metadata = {
   title: 'Charlas',
   description: 'Charlas y conferencias de Fundación Belong sobre equidad de género, liderazgo inclusivo y pertenencia — disponibles para empresas, colegios e instituciones en Colombia.',
-  alternates: { canonical: 'https://www.fundacionbelong.co/charlas/' },
+  alternates: { canonical: 'https://www.fundacionbelong.org/charlas/' },
 };
 
 export default function CharlasPage() {

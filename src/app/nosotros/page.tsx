@@ -8,7 +8,7 @@ import Layout from '../components/Layout';
 export const metadata: Metadata = {
   title: 'Nosotros',
   description: 'Conoce Fundación Belong — nuestra misión, visión y valores. Una fundación colombiana dedicada a construir entornos donde tod@s puedan desarrollar su potencial con equidad.',
-  alternates: { canonical: 'https://www.fundacionbelong.co/nosotros/' },
+  alternates: { canonical: 'https://www.fundacionbelong.org/nosotros/' },
 };
 
 export default function NosotrosPage() {

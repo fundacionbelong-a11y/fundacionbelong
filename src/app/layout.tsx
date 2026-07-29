@@ -3,7 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 import SessionProviderWrapper from "./components/SessionProviderWrapper";
 
-const siteUrl = "https://www.fundacionbelong.co";
+const siteUrl = "https://www.fundacionbelong.org";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -54,7 +54,6 @@ const jsonLd = {
     "https://www.instagram.com/pamelalopez.belong",
     "https://www.linkedin.com/in/pamelalopezz",
     "https://www.fundacionbelong.org",
-    "https://www.fundacionbelong.com",
   ],
 };
 

@@ -1,0 +1,36 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        { "type": "host", "value": "fundacionbelong.co" }
+      ],
+      "destination": "https://www.fundacionbelong.org/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        { "type": "host", "value": "www.fundacionbelong.co" }
+      ],
+      "destination": "https://www.fundacionbelong.org/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        { "type": "host", "value": "fundacionbelong.com" }
+      ],
+      "destination": "https://www.fundacionbelong.org/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        { "type": "host", "value": "www.fundacionbelong.com" }
+      ],
+      "destination": "https://www.fundacionbelong.org/:path*",
+      "permanent": true
+    }
+  ]
+}
