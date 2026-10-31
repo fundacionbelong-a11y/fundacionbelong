@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import DynamicBlogList, { type DynamicBlogPost } from './DynamicBlogList';
 
 // === LO QUE REALMENTE EXISTE ===
 
@@ -120,7 +121,7 @@ const filters = [
   { label: 'Cursos', type: 'Curso' },
 ];
 
-export default function ConocimientoSection() {
+export default function ConocimientoSection({ dynamicPosts = [] }: { dynamicPosts?: DynamicBlogPost[] }) {
   const [activeFilter, setActiveFilter] = useState('Todos');
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -164,6 +165,9 @@ export default function ConocimientoSection() {
           <p className="text-stone mb-10 max-w-2xl">
             Análisis, reflexiones y puntos de vista sobre género, cultura y transformación.
           </p>
+
+          {/* Dynamic MDX posts from the CMS (content/blog) */}
+          {dynamicPosts.length > 0 && <DynamicBlogList posts={dynamicPosts} />}
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {blogPosts.map((post, i) => (

@@ -144,6 +144,78 @@ html {
   left: 100%;
 }
 
+/* Blog article (MDX) typography — dynamic posts under /conocimiento/blog/[slug] */
+.blog-content p {
+  color: #78716c;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+.blog-content h2 {
+  font-family: var(--font-serif), Georgia, serif;
+  color: #7a3b4f;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 768px) {
+  .blog-content h2 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+.blog-content h3 {
+  font-family: var(--font-serif), Georgia, serif;
+  color: #44403c;
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.blog-content a {
+  color: #c0941a;
+  text-decoration: underline;
+}
+.blog-content a:hover {
+  color: #a67c15;
+}
+.blog-content ul,
+.blog-content ol {
+  color: #78716c;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+.blog-content ul { list-style: disc; }
+.blog-content ol { list-style: decimal; }
+.blog-content blockquote {
+  border-left: 2px solid #7a3b4f;
+  padding-left: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-style: italic;
+  color: #78716c;
+}
+.blog-content blockquote p {
+  margin-bottom: 0;
+}
+.blog-content img {
+  border-radius: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.blog-content strong, .blog-content b {
+  color: #44403c;
+  font-weight: 600;
+}
+.blog-content hr {
+  border: none;
+  border-top: 1px solid rgba(192, 148, 26, 0.2);
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 /* Card hover lift */
 .card-lift {
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
