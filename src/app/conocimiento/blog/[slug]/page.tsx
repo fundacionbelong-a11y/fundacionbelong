@@ -7,7 +7,7 @@ import { marked } from 'marked';
 import Layout from '../../../components/Layout';
 import { getAllPosts, getPostBySlug } from '../../../../lib/blog';
 import ShareButtons from './ShareButtons';
-import GiscusComments from './GiscusComments';
+import BelongComments from './BelongComments';
 
 const siteUrl = 'https://www.fundacionbelong.org';
 
@@ -178,7 +178,7 @@ export default async function BlogPostPage({
         />
 
         {post.share !== false && <ShareButtons title={post.title} />}
-        {post.comments !== false && <GiscusComments />}
+        {post.comments !== false && <BelongComments slug={post.slug} />}
       </article>
 
       {/* Footer nav */}
