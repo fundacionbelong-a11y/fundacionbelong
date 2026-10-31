@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Script from 'next/script';
 import Layout from '../../../components/Layout';
+import BelongComments from '../[slug]/BelongComments';
 
 const articleUrl = 'https://www.fundacionbelong.org/conocimiento/blog/ladies-first/';
 const ogImageUrl = 'https://www.fundacionbelong.org/ladies-first-og.png';
@@ -256,6 +257,7 @@ export default function LadiesFirstPage() {
           </a>
         </div>
 
+        <BelongComments slug="ladies-first" />
       </article>
 
       {/* Footer nav */}
