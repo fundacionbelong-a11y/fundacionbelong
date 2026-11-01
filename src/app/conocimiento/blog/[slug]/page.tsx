@@ -66,6 +66,7 @@ export default async function BlogPostPage({
 
   const articleUrl = `${siteUrl}/conocimiento/blog/${post.slug}/`;
   const html = marked.parse(post.content, { async: false }) as string;
+  const readingTime = Math.max(1, Math.round(post.content.split(/\s+/).length / 190));
 
   const articleJsonLd = {
     '@context': 'https://schema.org',
@@ -96,89 +97,85 @@ export default async function BlogPostPage({
       />
 
       {/* Article header */}
-      <div className="bg-white border-b border-gold/10">
-        <div className="max-w-3xl mx-auto px-6 pt-12 pb-16">
-          <Link
-            href="/conocimiento"
-            className="inline-flex items-center gap-2 text-sm text-stone/60 hover:text-gold transition-colors mb-6"
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </svg>
-            Volver a Conocimiento
-          </Link>
-
-          <nav aria-label="breadcrumb" className="mb-6">
-            <ol className="flex flex-wrap items-center gap-2 text-sm text-stone/60">
+      <div className="bg-gradient-to-b from-cream to-white border-b border-gold/10">
+        <div className="max-w-3xl mx-auto px-6 pt-10 pb-12 md:pb-14">
+          <nav aria-label="breadcrumb" className="mb-8">
+            <ol className="flex flex-wrap items-center gap-2 text-xs tracking-wide uppercase text-stone/50">
               <li><Link href="/" className="hover:text-gold transition-colors">Inicio</Link></li>
-              <li aria-hidden="true">/</li>
+              <li aria-hidden="true" className="text-gold/40">/</li>
               <li><Link href="/conocimiento" className="hover:text-gold transition-colors">Conocimiento</Link></li>
-              <li aria-hidden="true">/</li>
-              <li><Link href="/conocimiento" className="hover:text-gold transition-colors">Blog</Link></li>
-              <li aria-hidden="true">/</li>
-              <li className="text-charcoal font-medium" aria-current="page">{post.title}</li>
+              <li aria-hidden="true" className="text-gold/40">/</li>
+              <li className="text-charcoal/70 font-medium" aria-current="page">Artículo</li>
             </ol>
           </nav>
 
           {/* Vertical + tag chips */}
           <div className="flex flex-wrap gap-2 mb-6">
             {post.verticals.map((v) => (
-              <span key={v} className="px-3 py-1 bg-rosewood/10 text-rosewood text-xs font-medium rounded-full">
+              <span key={v} className="px-3.5 py-1.5 bg-charcoal text-cream text-xs font-semibold tracking-wider uppercase rounded-full">
                 {v}
               </span>
             ))}
-            {post.tags.map((t) => (
-              <span key={t} className="px-3 py-1 bg-gold/10 text-gold text-xs font-medium rounded-full">
+            {post.tags.slice(0, 4).map((t) => (
+              <span key={t} className="px-3.5 py-1.5 border border-gold/50 text-[#8a6a10] text-xs font-medium tracking-wide rounded-full capitalize">
                 {t}
               </span>
             ))}
           </div>
 
-          <h1 className="text-3xl md:text-5xl font-serif font-medium text-charcoal leading-tight mb-4">
+          <h1 className="text-3xl md:text-[3.25rem] font-serif font-medium text-charcoal leading-[1.15] tracking-tight mb-6">
             {post.title}
           </h1>
 
-          <div className="w-12 h-0.5 bg-gold mb-6" />
-
-          <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
-            <div>
-              <p className="text-sm font-medium text-charcoal tracking-widest uppercase">{post.author}</p>
-              <p className="text-xs text-stone/50 mt-0.5">Fundación Belong</p>
-            </div>
-            <div className="hidden sm:block w-px h-8 bg-gold/30" />
-            <p className="text-sm text-stone/60">
-              Publicado el{' '}
-              <time dateTime={post.date} className="font-medium text-charcoal">
-                {formatDate(post.date)}
-              </time>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+            <p className="text-charcoal">
+              <span className="text-stone/50">Por </span>
+              <span className="font-medium">{post.author}</span>
             </p>
+            <span aria-hidden="true" className="w-1 h-1 rounded-full bg-gold/60" />
+            <p className="text-stone/60">
+              <time dateTime={post.date}>{formatDate(post.date)}</time>
+            </p>
+            <span aria-hidden="true" className="w-1 h-1 rounded-full bg-gold/60" />
+            <p className="text-stone/60">{readingTime} min de lectura</p>
           </div>
         </div>
       </div>
 
       {/* Cover image */}
       {post.image && (
-        <div className="max-w-3xl mx-auto px-6 pt-12">
+        <div className="max-w-4xl mx-auto px-6 -mt-1 pt-10">
           <Image
             src={post.image}
             alt={post.title}
             width={1200}
             height={675}
-            className="w-full rounded-2xl object-cover"
+            className="w-full rounded-2xl object-cover shadow-[0_30px_60px_-25px_rgba(68,64,60,0.35)]"
             priority
           />
         </div>
       )}
 
       {/* Article body */}
-      <article className="max-w-3xl mx-auto px-6 py-16 md:py-24">
+      <article className="max-w-3xl mx-auto px-6 pt-14 pb-16 md:pt-16">
         <div
           className="blog-content"
           dangerouslySetInnerHTML={{ __html: html }}
         />
 
-        {post.share !== false && <ShareButtons title={post.title} />}
-        {post.comments !== false && <BelongComments slug={post.slug} />}
+        {post.share !== false && (
+          <section className="mt-16 pt-10 border-t border-gold/15">
+            <h2 className="text-xs font-semibold tracking-[0.2em] uppercase text-stone/50 mb-6">
+              Comparte este artículo
+            </h2>
+            <ShareButtons title={post.title} />
+          </section>
+        )}
+        {post.comments !== false && (
+          <section className="mt-12">
+            <BelongComments slug={post.slug} />
+          </section>
+        )}
       </article>
 
       {/* Footer nav */}

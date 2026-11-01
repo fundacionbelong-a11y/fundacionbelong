@@ -145,75 +145,157 @@ html {
 }
 
 /* Blog article (MDX) typography — dynamic posts under /conocimiento/blog/[slug] */
+.blog-content {
+  font-size: 1.125rem;
+}
 .blog-content p {
-  color: #78716c;
-  line-height: 1.75;
-  margin-bottom: 1.5rem;
+  color: #57534e;
+  line-height: 1.9;
+  margin-bottom: 1.75rem;
+}
+/* lead paragraph */
+.blog-content > p:first-of-type {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: #44403c;
+  font-weight: 400;
+}
+.blog-content > p:first-of-type::first-letter {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 3.1em;
+  float: left;
+  line-height: 0.82;
+  padding-right: 0.14em;
+  padding-top: 0.08em;
+  color: #a67c15;
+  font-weight: 500;
 }
 .blog-content h2 {
   font-family: var(--font-serif), Georgia, serif;
-  color: #7a3b4f;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  margin-top: 2.5rem;
-  margin-bottom: 1.5rem;
+  color: #292524;
+  font-size: 1.65rem;
+  line-height: 2.1rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin-top: 3rem;
+  margin-bottom: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(192, 148, 26, 0.25);
 }
 @media (min-width: 768px) {
   .blog-content h2 {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
+    font-size: 2rem;
+    line-height: 2.5rem;
   }
+}
+.blog-content h2::before {
+  content: '';
+  display: block;
+  width: 2.5rem;
+  height: 2px;
+  background: #c0941a;
+  margin-bottom: 1rem;
 }
 .blog-content h3 {
   font-family: var(--font-serif), Georgia, serif;
   color: #44403c;
-  font-size: 1.25rem;
-  margin-top: 2rem;
+  font-size: 1.375rem;
+  font-weight: 500;
+  margin-top: 2.5rem;
   margin-bottom: 1rem;
 }
 .blog-content a {
-  color: #c0941a;
+  color: #a67c15;
   text-decoration: underline;
+  text-decoration-color: rgba(192, 148, 26, 0.4);
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
 .blog-content a:hover {
-  color: #a67c15;
+  color: #7a5c0e;
+  text-decoration-color: #7a5c0e;
 }
 .blog-content ul,
 .blog-content ol {
-  color: #78716c;
-  line-height: 1.75;
-  margin-bottom: 1.5rem;
-  padding-left: 1.5rem;
+  color: #57534e;
+  line-height: 1.85;
+  margin-bottom: 1.75rem;
+  padding-left: 1.4rem;
 }
-.blog-content ul { list-style: disc; }
-.blog-content ol { list-style: decimal; }
+.blog-content ul { list-style: none; }
+.blog-content ul > li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+.blog-content ul > li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 0.5rem;
+  height: 2px;
+  background: #c0941a;
+}
+.blog-content ol { list-style: none; counter-reset: belong-ol; }
+.blog-content ol > li {
+  counter-increment: belong-ol;
+  position: relative;
+  padding-left: 2.6rem;
+  margin-bottom: 0.85rem;
+}
+.blog-content ol > li::before {
+  content: counter(belong-ol, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 1.05rem;
+  color: #c0941a;
+}
 .blog-content blockquote {
-  border-left: 2px solid #7a3b4f;
-  padding-left: 1.5rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  position: relative;
+  background: #faf7f2;
+  border-radius: 1rem;
+  padding: 2.25rem 2.25rem 2rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 1.35rem;
+  line-height: 1.6;
+  color: #44403c;
   font-style: italic;
-  color: #78716c;
+}
+.blog-content blockquote::before {
+  content: '\201C';
+  position: absolute;
+  top: 0.4rem;
+  left: 1.1rem;
+  font-size: 4rem;
+  line-height: 1;
+  color: rgba(192, 148, 26, 0.35);
+  font-style: normal;
 }
 .blog-content blockquote p {
   margin-bottom: 0;
+  color: inherit;
 }
 .blog-content img {
   border-radius: 1rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  box-shadow: 0 20px 40px -18px rgba(68, 64, 60, 0.25);
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 .blog-content strong, .blog-content b {
-  color: #44403c;
+  color: #292524;
   font-weight: 600;
 }
 .blog-content hr {
   border: none;
-  border-top: 1px solid rgba(192, 148, 26, 0.2);
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(192, 148, 26, 0.45), transparent);
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 /* Card hover lift */
