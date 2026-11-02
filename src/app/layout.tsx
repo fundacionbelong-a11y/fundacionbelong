@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import SessionProviderWrapper from "./components/SessionProviderWrapper";
 
@@ -75,6 +76,7 @@ export default function RootLayout({
         <SessionProviderWrapper>
           {children}
         </SessionProviderWrapper>
+        <Analytics />
       </body>
     </html>
   );

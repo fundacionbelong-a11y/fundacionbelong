@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import ConocimientoSection from '../components/ConocimientoSection';
 import Layout from '../components/Layout';
-import { getAllPosts } from '../../lib/blog';
+import { getAllPostsEverywhere, postPath } from '../../lib/blog';
 
 export const metadata: Metadata = {
   title: 'Conocimiento',
@@ -10,10 +10,13 @@ export const metadata: Metadata = {
 };
 
 export default function ConocimientoPage() {
-  // Artículos MDX dinámicos commiteados por Belong Studio (content/blog).
+  // Artículos MDX dinámicos commiteados por Belong Studio (content/<sección>).
   // Se pasan sin el cuerpo markdown para no inflar el client bundle.
-  const dynamicPosts = getAllPosts().map((post) => ({
+  const dynamicPosts = getAllPostsEverywhere().map((post) => ({
     slug: post.slug,
+    section: post.section,
+    sectionName: post.sectionName,
+    path: postPath(post),
     title: post.title,
     date: post.date,
     author: post.author,

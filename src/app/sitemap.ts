@@ -1,12 +1,12 @@
 import type { MetadataRoute } from 'next';
-import { getAllPosts } from '../lib/blog';
+import { getAllPostsEverywhere, postPath } from '../lib/blog';
 
 const siteUrl = 'https://www.fundacionbelong.org';
 
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const posts = getAllPosts();
+  const posts = getAllPostsEverywhere();
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: `${siteUrl}/`, lastModified: '2025-07-15', changeFrequency: 'weekly', priority: 1.0 },
@@ -22,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const blogRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
-    url: `${siteUrl}/conocimiento/blog/${post.slug}/`,
+    url: `${siteUrl}${postPath(post)}`,
     lastModified: post.date,
     changeFrequency: 'monthly',
     priority: 0.8,

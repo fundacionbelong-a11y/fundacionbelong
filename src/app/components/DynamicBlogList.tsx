@@ -7,6 +7,9 @@ import { motion } from 'framer-motion';
 
 export interface DynamicBlogPost {
   slug: string;
+  section: string;
+  sectionName: string;
+  path: string;
   title: string;
   date: string; // ISO
   author: string;
@@ -91,6 +94,11 @@ export default function DynamicBlogList({ posts }: { posts: DynamicBlogPost[] })
               )}
               <div className="p-6 flex flex-col flex-1">
                 <div className="flex flex-wrap gap-2 mb-4">
+                  {post.section !== 'blog' && (
+                    <span className="px-3 py-1 bg-gold/15 text-[#8a6a10] text-xs font-medium rounded-full">
+                      {post.sectionName}
+                    </span>
+                  )}
                   {post.verticals.map((v) => (
                     <span
                       key={v}
@@ -108,7 +116,7 @@ export default function DynamicBlogList({ posts }: { posts: DynamicBlogPost[] })
                 </div>
                 <div className="mt-4">
                   <Link
-                    href={`/conocimiento/blog/${post.slug}/`}
+                    href={post.path}
                     className="inline-flex items-center gap-1 text-gold text-sm font-medium hover:text-dark-gold transition-colors"
                   >
                     Leer <span>→</span>
