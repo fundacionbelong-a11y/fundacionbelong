@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@auth/pg-adapter": "^1.11.2",
-    "@giscus/react": "^3.1.0",
     "@types/bcryptjs": "^2.4.6",
     "@types/pg": "^8.20.0",
     "@vercel/analytics": "^2.0.1",
